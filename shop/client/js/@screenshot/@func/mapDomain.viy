@@ -1,0 +1,1 @@
+function mapDomain(string,fn){return map(string.split(regexSeparators),fn).join('.')}

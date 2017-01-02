@@ -1,0 +1,5 @@
+function toASCII(domain) {
+	return mapDomain(domain,function(string){
+		return regexNonASCII.test(string) ? 'xn--' + encode(string) : string;
+	});
+}

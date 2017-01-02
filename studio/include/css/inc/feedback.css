@@ -1,0 +1,29 @@
+body{background:#eee;}
+
+.leave_feedback_button_wrap{padding-top:15px}
+.leave_feedback_button_wrap2{text-align:right}
+.leave_feedback_button_wrap2>p{user-select:none;text-align:center;display:inline-block;font-size:18px;line-height:18px;font-weight:300;color:#bda180;background-color:#fff;border-radius:2px;padding:10px;margin-right:5px;cursor:pointer;position:relative}
+
+#leave_feedback{display:none}
+.leave_feedback{background:#fff;border-radius:2px;overflow:hidden;text-align:left;padding:10px;margin-top:10px}
+.leave_feedback>div{text-align:left}
+.postcode_input{box-shadow:0 2px 2px rgba(0,0,0,0.1),0 6px 10px rgba(0,0,0,.1);height:28px;padding:4px;background:#bda180;display:inline-block;border-radius:2px;overflow:hidden;margin-bottom:10px}
+.postcode_input_textarea{box-shadow:0 2px 2px rgba(0,0,0,0.1),0 6px 10px rgba(0,0,0,.1);position:relative;padding:2px;background:#bda180;border-radius:2px}
+.postcode_input>input{border:0;border-bottom:2px solid #fff;padding:2px 6px 0;font-size:16px;font-weight:300;text-align:left;background:#bda180;color:#fff;outline:none;line-height:18px;height:24px}
+.leave_feedback input[type="submit"]{padding:9px 6px;font-size:18px;background:#bda180;color:#fff;outline:none;line-height:18px;border:0;border-radius:2px;float:right;cursor:pointer}
+.leave_feedback textarea{padding:9px 6px;min-height:80px;font-size:18px;background:#bda180;color:#fff;outline:none;line-height:18px;border:0;border-radius:2px;resize:none;width:100%;box-sizing:border-box}
+.feedback_wrap{padding:10px 5px 0;vertical-align:top;box-sizing:border-box}
+
+
+
+.simple_feedback{overflow:hidden;background:#fff;border-radius:2px;margin-bottom:10px;position:relative;}
+.simple_feedback:hover{transition:.2s;box-shadow:0 2px 2px rgba(0,0,0,0.1),0 6px 10px rgba(0,0,0,.1);}
+.simple_feedback>.time{position:absolute;top:5px;right:5px;color:#bda180;font-size:14px;font-weight:300}
+.simple_feedback>.feedback_header{height:100px}
+.simple_feedback>.feedback_header>.icon_container{display:inline-block;position:relative;text-align:center;height:100%}
+.simple_feedback>.feedback_header>.icon_container>p{display:inline-block;color:#bda180;font-size:14px;font-weight:300;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width:90%;vertical-align:middle;}
+.simple_feedback>p{display:block;width:90%;margin:15px 5%;color:#bda180;font-size:14px;font-weight:300}
+
+@media (max-width:575px){
+.leave_feedback input[type="submit"]{float:none;position:absolute!important;top:-50px;right:0;}
+}

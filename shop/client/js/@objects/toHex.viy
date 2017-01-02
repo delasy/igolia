@@ -1,0 +1,7 @@
+function toHEX(n){
+	if(typeof n !== 'number')return n;
+	else if(n === 0)return '0x00'; 
+	else if(n > 15)return '0x' + n.toString(16).toUpperCase();
+
+	return '0x0' + n.toString(16).toUpperCase();
+}

@@ -1,0 +1,6 @@
+<? include inc/ipts.viy ?>
+<? include inc/ipmc.viy ?>
+<? include inc/ipbs.viy ?>
+<? include inc/ipn.viy ?>
+<? include inc/ipnd.viy ?>
+<? include inc/header-search.viy ?>

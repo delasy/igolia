@@ -1,0 +1,38 @@
+function(obj){
+	var t = d.getElementById('headerSearch');
+
+	if(!w.hasOwnProperty('webkitSpeechRecognition'))return ithis[log]();
+
+	if(!ithis[startDictationTmp]){
+		ithis[startDictationTmp] = true;
+
+		var recognitation = new webkitSpeechRecognition();
+
+		recognitation.continuous = false;
+		recognitation.interimResults = false;
+
+		recognitation.lang = ithis[getLang]();
+		obj.innerHTML = 'mic';
+
+		recognitation.start();
+
+		['onend','onerror','onresult'].forEach(function(eventName){
+			recognitation[eventName] = function(e){
+				ithis[startDictationTmp] = false;
+
+				obj.innerHTML = 'mic_none';
+
+				if(e&&e.results)t.value = e.results[0][0].transcript;
+
+				recognitation.stop();
+
+				d.getElementById('headerSearchIcon').click();
+			};
+		});
+
+		ithis[recognitation] = recognitation;
+	}else{
+		ithis[startDictationTmp] = false;
+		ithis[recognitation].stop();
+	}
+}

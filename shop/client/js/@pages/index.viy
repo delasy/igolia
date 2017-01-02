@@ -1,0 +1,5 @@
+function(){
+<? include inc/footer.viy ?>
+<? include index_.viy ?>
+<? include signin.viy ?>
+}

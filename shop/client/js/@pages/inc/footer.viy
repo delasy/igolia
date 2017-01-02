@@ -1,0 +1,23 @@
+if(d.getElementById('footer_toup_button')){
+	function footer_toup_button_toggle(){
+		if(w.innerWidth > 576)return;
+		var display = '';
+
+		if( (w.scrollY+w.innerHeight) > (ithis[documentHeight]()-100) ){
+			display = 'none';
+		}
+
+		if(w.scrollY < (w.innerHeight/2) ){
+			display = 'none';
+		}
+
+		d.getElementById('footer_toup_button').style.display = display;
+	};
+	w.addEventListener('scroll',footer_toup_button_toggle);
+
+	footer_toup_button_toggle();
+
+	d.getElementById('footer_toup_button').addEventListener('click',function(){
+		ithis[animate]({target:'scrollTop',el:d,from:w.scrollY,to:0},800);
+	});
+}

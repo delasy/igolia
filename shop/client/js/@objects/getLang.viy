@@ -1,0 +1,9 @@
+function(){
+	if(!ithis[getCookie]('lang')){
+		var lang = w.navigator.userLanguage || w.navigator.language;
+		lang = lang ? lang.substr(0,2).toLowerCase() : 'ru';
+
+		d.cookie = 'lang='+lang;
+		return lang;
+	}else return ithis[getCookie]('lang');
+}

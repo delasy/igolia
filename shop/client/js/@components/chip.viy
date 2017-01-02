@@ -1,0 +1,41 @@
+/*data-igload="igchip"/data-label/data-btn:false/data-value/data-cb/data-icon*/
+function(el){
+	if(!el)return;
+
+	var pel=el.parentNode;
+	var deletable = (el.getAttribute('data-btn') === 'true') ? ' ig-chip--deletable' : '';
+	var cb = (el.hasAttribute('data-cb')&&typeof w[el.getAttribute('data-cb')] === 'function') ? w[el.getAttribute('data-cb')] : false;
+	var val = el.hasAttribute('data-value')&&el.getAttribute('data-value') ? el.getAttribute('data-value') : undefined;
+	var icon = el.hasAttribute('data-icon')&&el.getAttribute('data-icon') ? el.getAttribute('data-icon') : undefined;
+
+	var div = d.createElement('div');
+	div.className = 'ig-chip'+deletable;
+
+	var text = d.createElement('span');
+	text.className = 'ig-chip__text';
+	text.innerHTML = el.getAttribute('data-label');
+
+	var btn = d.createElement('button');
+	btn.className = 'ig-chip__btn';
+	btn.innerHTML = '<i class="material-icons">cancel</i>';
+
+	if(icon){
+		var bicon = d.createElement('span');/*before icon*/
+		bicon.className = 'material-icons ig-chip__icon';
+		bicon.innerHTML = icon;
+
+		div.appendChild(bicon);
+	}
+
+	div.appendChild(text);
+	div.appendChild(btn);
+
+	pel.insertBefore(div,el);
+	pel.removeChild(el);
+
+	btn.addEventListener('click',function(){
+		if(cb)cb(val);
+
+		pel.removeChild(div);
+	});
+}

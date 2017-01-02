@@ -1,0 +1,23 @@
+@media (max-width:575px){
+#rc-imageselect,.g-recaptcha{transform:scale(.77);transform-origin:0 0;}
+}
+
+.ig-pageloadermain{position:fixed;left:0;top:0;z-index:16777271;width:100%;height:100%;justify-content:center;align-items:center;background:rgba(255,255,255,.6);display:none;}
+
+.ig-preheader{margin-top:-64px;padding:84px 0 20px}
+.ig-preheader--water{position:absolute;left:0;top:64px;width:100%;height:250px;}
+
+.ig-form{position:relative;padding:70px 0 0;}
+.ig-form__card{background:#fff;border-radius:2px;margin-bottom:60px;padding:40px 28px;}
+.ig-form__card{grid-column-start:1}
+
+@media(min-width:576px){/*sm*/
+.ig-form__card{padding:80px 56px;}
+.ig-form__card{grid-column-start:2}
+}
+@media(min-width:768px){/*md*/
+.ig-form__card{grid-column-start:3}
+}
+@media(min-width:992px){/*lg*/
+.ig-form__card{grid-column-start:4}
+}

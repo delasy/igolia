@@ -1,0 +1,17 @@
+ithis[components] = {};
+ithis[components][ripple] = ithis[components].ripple = <? include ripple.viy ?>;
+ithis[components][input] = ithis[components].input = <? include input.viy ?>;
+ithis[components].checkbox = <? include checkbox.viy ?>;
+ithis[components].switch = <? include switch.viy ?>;
+ithis[components][spinner] = ithis[components].spinner = <? include spinner.viy ?>;
+ithis[components].range = <? include range.viy ?>;
+ithis[components].snackbar = ithis[log] = <? include snackbar.viy ?>;
+ithis[components].menu = <? include menu.viy ?>;
+ithis[components].chip = <? include chip.viy ?>;
+ithis[components].select = <? include select.viy ?>;
+ithis[components].toolbar = <? include toolbar.viy ?>;
+ithis[components].tabs = <? include tabs.viy ?>;
+ithis[components].table = <? include table.viy ?>;
+ithis[components].drawer = <? include drawer.viy ?>;
+ithis[components].dialog = <? include dialog.viy ?>;
+ithis[components].autoload = <? include autoload.viy ?>;

@@ -1,0 +1,44 @@
+function decode(input) {
+	var output = [],inputLength = input.length,out,i = 0,n = initialN,bias = initialBias,basic,j,index,oldi,w,k,digit,t,baseMinusT;
+
+	basic = input.lastIndexOf(delimiter);
+	if(basic < 0)basic = 0;
+
+	for(j=0;j<basic;++j){
+		if(input.charCodeAt(j) >= 0x80)error('not-basic');
+
+		output.push(input.charCodeAt(j));
+	}
+
+	for(index=basic>0?basic+1:0;index<inputLength;){
+		for (oldi=i,w=1,k=base;;k+=base){
+			if (index >= inputLength)error('invalid-input');
+
+			digit = basicToDigit(input.charCodeAt(index++));
+
+			if(digit >= base || digit > floor((maxInt - i) / w))error('overflow');
+
+			i += digit * w;
+			t = k <= bias ? tMin : (k >= bias + tMax ? tMax : k - bias);
+
+			if(digit<t)break;
+
+			baseMinusT = base - t;
+			if(w > floor(maxInt / baseMinusT))error('overflow');
+
+			w *= baseMinusT;
+		}
+
+		out = output.length + 1;
+		bias = adapt(i - oldi, out, oldi == 0);
+
+		if (floor(i / out) > maxInt - n)error('overflow');
+
+		n += floor(i / out);
+		i %= out;
+
+		output.splice(i++, 0, n);
+	}
+
+	return ucs2encode(output);
+}

@@ -1,0 +1,96 @@
+
+<% if(!get){
+	%><div>
+		<a href="/admin/products_list?c=<%-c%>">Back</a>
+		<button onclick="getEditAccess()">Get Edit Access</button>
+	</div><br/><%
+}else{
+	%><div><a href="/admin/product/edit?c=<%-c%>&p=<%-p.furl%>">Back</a></div><br/><%
+} %>
+<div id="c"></div>
+<script>
+var p = <%-JSON.stringify(p)%>;
+var c = <%-get%>;
+var cat = '<%-c%>';
+
+var html = '';
+
+function getEditAccess(){
+	window.location.href += '&edit=1';
+}
+
+html += '<table border=1 cellpadding=4 cellspacing=0 width="100%">';
+
+html += '<tr>';
+	html += '<th align=left>Key</th>';
+	html += '<th align=left>Value</th>';
+
+if(c){
+	html += '<th align=left></th>';
+}
+
+html += '</tr>';
+
+for(let key in p){
+	if(key==='furl')continue;
+	if(!p.hasOwnProperty(key))continue;
+
+	var val = p[key];
+
+	html += '<tr>';
+
+	if(c){
+		html += '<th align=left>' + key + ': </th>'
+		html += '<td class=center align=left>';
+			html += '<input style="width:100%" name="' + key + '" value="' + val + '">';
+		html += '</td>';
+		html += '<td align=center><button onclick="makesave(this)">Save</button></td>';
+	}else{
+		html += '<th align=left>' + key + ': </th>'
+		html += '<td align=left>' + val + '</td>';
+	}
+
+	html += '</tr>';
+}
+html += '</table>';
+
+function makesave(o){
+	var pa = o.parentNode.parentNode;
+	var p_center = pa.getElementsByClassName('center')[0];
+	var p_center_input = p_center.getElementsByTagName('input')[0];
+
+	var fields = {
+		c : cat,
+		p : p.furl,
+		f : p_center_input.name,
+		v : p_center_input.value
+	};
+
+	if(document.getElementById('tf')){
+		document.getElementById('tf').parentNode.removeChild(document.getElementById('tf'));
+	}
+
+	var form = document.createElement('form');
+	form.action = '/admin/product/edit';
+	form.method = 'post';
+	form.style.display = 'none';
+	form.id = 'tf';
+
+	for(let field in fields){
+		if(!fields.hasOwnProperty(field))continue;
+		var fieldval = fields[field];
+
+		var input = document.createElement('input');
+		input.name = field;
+		input.value = fieldval;
+		input.type = 'hidden';
+
+		form.appendChild(input);
+	}
+	document.body.appendChild(form);
+
+	document.getElementById('tf').submit();
+}
+
+document.getElementById('c').innerHTML = html;
+</script>

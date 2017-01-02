@@ -1,0 +1,1 @@
+function utf8_encode(a){a=a.replace(/\r\n/g,"\n");var b="",n,c;for(n=0;n<a.length;n++){c=a.charCodeAt(n);if(c<128)b+=String.fromCharCode(c);else if((c>127)&&(c<2048)){b+=String.fromCharCode((c>>6)|192);b+=String.fromCharCode((c&63)|128);}else{b+=String.fromCharCode((c>>12)|224);b+=String.fromCharCode(((c>>6)&63)|128);b+=String.fromCharCode((c&63)|128);}}return b;}

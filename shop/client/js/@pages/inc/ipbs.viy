@@ -1,0 +1,28 @@
+if(d.getElementById('ipbsVIY')){
+	ithis[ajax_get]('/api/banners',{},(data)=>{
+		try{
+			var json = JSON.parse(data);
+		}catch(e){console.error(e)}
+
+		d.getElementById('ipbsVIY').innerHTML = '';
+		d.getElementById('ipbsVIY').className = 'container';
+		d.getElementById('ipbsVIY').parentNode.className = 'ig-primary ig-index-page__container';
+
+		var ipbs = ithis[createNode]('div',{
+			className:'row',
+			id:'ipbs'
+		});
+
+		d.getElementById('ipbsVIY').appendChild(ipbs);		
+
+		for(var key in json){
+			var val = json[key];
+
+			var div = d.createElement('div');
+			div.className = 'col-sm-6 col-12 ig-index-page__banner';
+			div.innerHTML = '<a href="'+key+'"><img class="ig-sh2" src="'+val+'"></a>';
+			
+			d.getElementById('ipbs').appendChild(div);
+		}
+	});
+}

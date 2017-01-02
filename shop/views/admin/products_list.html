@@ -1,0 +1,57 @@
+<div><a href="/admin/products">Back</a></div>
+<div id="c"></div>
+<script>
+function generateTable(fields,products){
+	//console.log(fields);
+	//console.log(products);
+	var i,j;
+
+	var html = '<table border=1 cellpadding=4 cellspacing=0 width="100%">';
+
+	//table header,category fields
+	html += '<tr>';
+
+	for(i=0;i<fields.length;i++){
+		html += '<th align=left>'+fields[i]+'</th>';
+	}
+	html += '<th></th><th></th>';
+
+	html += '</tr>';
+
+	//category products
+	for(j=0;j<products.length;j++){
+		var _ = '';
+		var __ = '';
+		html += '<tr>';
+
+		for(i=0;i<fields.length;i++){
+			if(fields[i] === 'furl'){
+				_ = '<a target="_blank" href="/product/'+products[j][fields[i]]+'">';
+				__ = '</a>';
+			}else _ = __ = '';
+
+			html += '<td>'+_+products[j][fields[i]]+__+'</td>';
+		}
+		html += '<td align=center><button onclick="editp(\''+products[j]['furl']+'\')">Edit</button></td>';
+		html += '<td align=center><button onclick="deletep(\''+products[j]['furl']+'\')">Delete</button></td>';
+
+		html += '</tr>';
+	}
+
+
+	html += '</table>';
+
+	document.getElementById('c').innerHTML = html;
+
+	return true;
+}
+generateTable(<%-JSON.stringify(fields)%>,<%-JSON.stringify(p)%>);
+
+var category = '<%=c%>';
+function editp(furl){
+	window.location.href = '/admin/product/edit	?c='+category+'&p='+furl;
+}
+function deletep(furl){
+	window.location.href = '/admin/product/delete?c='+category+'&p='+furl;
+}
+</script>

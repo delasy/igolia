@@ -1,0 +1,133 @@
+if(d.getElementById('ipndVIY')){
+	ithis[ajax_get]('/api/products/discounted',{},(data)=>{
+		try{
+			var json = JSON.parse(data);
+		}catch(e){console.error(e)}
+
+		d.getElementById('ipndVIY').innerHTML = '';
+		d.getElementById('ipndVIY').className = 'container';
+		d.getElementById('ipndVIY').parentNode.className = 'ig-primary ig-index-page__container';
+
+		var title = ithis[createNode]('h3',{
+			className:'ig-primary__text',
+			innerHTML:T['DiscountedProducts']
+		});
+
+		var morebtn = ithis[createNode]('a',{
+			className:'ig-btn ig-tsi-btn--more ig-btn--seconry ig-btn--lil',
+			href:'#',
+			innerHTML:T['More'],
+			attr1:{
+				name:'data-igload',
+				value:'igripple'
+			}
+		});
+
+		ithis[components][ripple](morebtn,1);
+
+		var ipnd = ithis[createNode]('div',{
+			className:'tsi-wrap row',
+			id:'ipnd'
+		});
+
+		d.getElementById('ipndVIY').appendChild(title);
+		d.getElementById('ipndVIY').appendChild(morebtn);
+		d.getElementById('ipndVIY').appendChild(ipnd);		
+
+		for(var i=0;i<json.length;i++){
+			var item = json[i];
+
+			var href = '/product/'+item['furl'];
+
+			var el = d.createElement('div');
+			el.className = 'tsi col-lg-2 col-md-3 col-sm-4 col-6';
+
+				var el2 = d.createElement('div');
+				el2.className = 'tsi-con ig-sh2';
+
+					var el3 = d.createElement('a');
+					el3.href = href;
+
+						var el4 = d.createElement('div');
+						el4.className = 'tsi-image';
+
+							var el5 = d.createElement('div');
+							el5.className = 'tsi-image-inner';
+
+								var el6 = d.createElement('img');
+								el6.src = '/uploads/product/'+item['furl']+'/1.jpg';
+								el6.alt = '';
+
+								el5.appendChild(el6);
+
+								var el6 = d.createElement('span');
+
+								el5.appendChild(el6);
+							el4.appendChild(el5);
+
+							var el5 = d.createElement('span');
+							el5.className = 'tsi-image-cover';
+
+								var el6 = d.createElement('i');
+								el6.className = 'material-icons';
+								el6.innerHTML = 'link';
+
+								el5.appendChild(el6);
+							el4.appendChild(el5);
+						el3.appendChild(el4);
+					el2.appendChild(el3);
+					var el3 = d.createElement('div');
+					el3.className = 'tsi-details';
+
+						var el4 = d.createElement('a');
+						el4.href = href;
+						el4.className = 'title';
+						el4.innerHTML = item['name'];/*name*/
+
+						el3.appendChild(el4);
+
+						var el4 = d.createElement('a');
+						el4.href = '/category/'+item['category'].toLowerCase();
+						el4.className = 'subtitle';
+						el4.innerHTML = T[item['category']];/*category*/
+
+						el3.appendChild(el4);
+
+						var el4 = d.createElement('div');
+						el4.className = 'tsi-details-end';
+
+						el3.appendChild(el4);
+					el2.appendChild(el3);
+					var el3 = d.createElement('div');
+					el3.className = 'tsi-bottom';
+
+						var el4 = d.createElement('a');
+						el4.href = href;
+						el4.className = 'tsi-discount';
+						el4.innerHTML = '<div class="tsi-discount-text">'+item['price']+'.00 UAH</div>';/*rate*/
+
+						el3.appendChild(el4);
+
+						var el4 = d.createElement('a');
+						el4.href = href;
+						el4.className = 'tsi-rate';
+						el4.innerHTML = '<span>'+item['reviews']+'</span><i class="material-icons">star</i></a>';/*rate*/
+
+						el3.appendChild(el4);
+
+						var el4 = d.createElement('a');
+						el4.href = href;
+						el4.className = 'tsi-price';
+
+							var el5 = d.createElement('div');
+							el5.className = 'tsi-price-wrap ig-seconry__text';
+							el5.innerHTML = item['pprice']+'.00 UAH';/*price*/
+
+							el4.appendChild(el5);
+						el3.appendChild(el4);
+					el2.appendChild(el3);
+				el.appendChild(el2);
+			d.getElementById('ipnd').appendChild(el);
+		}
+	});
+}

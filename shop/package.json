@@ -1,0 +1,20 @@
+{
+  "name": "ivucha",
+  "version": "1.0.0",
+  "description": "Test shop for my girlfriend",
+  "main": "app.js",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "delasy",
+  "license": "MIT",
+  "TB": {
+    "USERS": "users",
+    "PT": "page_titles",
+    "COUNTRY": "country",
+    "SETTINGS": "settings",
+    "PREFIX": "_"
+  },
+  "port": 5000
+}

@@ -1,0 +1,10 @@
+.pp__top{position:relative;}
+.pp__top__left{position:relative;width:200px;vertical-align:top;text-align:left;display:inline-block;}
+.pp__icon{width:200px;height:200px;background:#fff;position:relative;text-align:center;white-space:nowrap;overflow:hidden;border-radius:2px;display:inline-block;}
+.pp__icon img{display:inline-block;vertical-align:middle;max-height:90%;max-width:90%;}
+.pp__icon span{display:inline-block;height:100%;vertical-align:middle}
+.pp__top__left__renew{color:rgba(255,255,255,.8);text-align:center;margin:10px 0 0}
+.pp__top__right{position:absolute;top:0;left:200px;right:0;bottom:0;padding:0 0 0 20px}
+.pp__top__right h4{color:rgba(255,255,255,.8);margin:0;padding:10px 0 5px}
+.pp__top__right h5{color:rgba(255,255,255,.8);margin:0;padding:5px 0}
+.pp__price{position:absolute!important;right:0;top:8px;}

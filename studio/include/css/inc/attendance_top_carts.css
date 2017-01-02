@@ -1,0 +1,8 @@
+.attendance_top_carts{margin-bottom:-10px;}
+.attendance_top_carts .attendance_cart{padding:0 15px;box-sizing:border-box;margin-bottom:10px;}
+.attendance_top_carts .attendance_cart>div{box-shadow:0 2px 5px 0 rgba(0,0,0,.26);position:relative;border-radius:2px;overflow:hidden;background-color:rgba(189,161,128,.85);}
+.attendance_top_carts .attendance_cart>div>._image{height:200px;overflow:hidden;}
+.attendance_top_carts .attendance_cart>div>._image>img{width:100%;min-height:200px;}
+.attendance_top_carts .attendance_cart>div>._text{padding:10px;}
+.attendance_top_carts .attendance_cart>div>._text>h1{text-align:left;color:#fff;font-size:20px;font-weight:300;line-height:30px;}
+.attendance_top_carts .attendance_cart>div>._text>h2{text-align:left;color:#fff;font-size:16px;font-weight:300;line-height:22px}

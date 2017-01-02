@@ -1,0 +1,5 @@
+function toUnicode(domain){
+	return mapDomain(domain,function(string){
+		return regexPunycode.test(string) ? decode(string.slice(4).toLowerCase()) : string;
+	});
+}

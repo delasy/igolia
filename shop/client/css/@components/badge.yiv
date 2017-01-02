@@ -1,0 +1,7 @@
+/* badges */
+.ig-badge{position:relative;display:inline-block;-webkit-tap-highlight-color:rgba(255,255,255,0);}
+.ig-badge[data-badge]:after{content:attr(data-badge);display:inline-block;position:absolute;top:-11px;right:-11px;font-weight:600;font-size:12px;width:22px;height:22px;border-radius:50%;background:rgb(117,117,117);color:#fff;text-align:center;line-height:22px;}
+.ig-badge[data-theme="primary"]:after{background:var(--ig-primary);color:var(--ig-primary__text);}
+.ig-badge[data-theme="seconry"]:after{background:var(--ig-seconry);color:var(--ig-seconry__text);}
+.ig-badge.ig-badge--icon::after{top:2px;right:2px;}
+.ig-badge.ig-badge--material::after{font-family:'Material Icons'}

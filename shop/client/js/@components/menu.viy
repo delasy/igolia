@@ -1,0 +1,23 @@
+function(el){
+	if(!el)return false;
+
+	var pel = el.parentNode;
+
+	if(!ithis[hasClass](pel,'ig-menu'))return;
+
+	var con = pel.getElementsByClassName('ig-menu__content');
+	if(!con[0])return;con = con[0];
+
+	el.addEventListener('click',function(){
+		ithis[addClass](pel,'ig-menu--open');
+	});
+
+	d.addEventListener('click',function(e){
+		if(e.target !== el)ithis[removeClass](pel,'ig-menu--open');
+	});
+
+	d.addEventListener('keyup',function(e){
+		var key = e.which;
+		if(key === 27)ithis[removeClass](pel,'ig-menu--open');
+	});
+}

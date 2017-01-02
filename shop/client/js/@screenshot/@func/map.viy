@@ -1,0 +1,6 @@
+function map(array,fn){
+	var length = array.length;
+	while(length--)array[length] = fn(array[length]);
+
+	return array;
+}

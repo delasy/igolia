@@ -1,0 +1,3 @@
+function basicToDigit(codePoint){
+	return (codePoint - 48 < 10) ? (codePoint - 22) : (codePoint - 65 < 26) ? (codePoint - 65) : (codePoint - 97 < 26) ? (codePoint - 97) : base;
+}

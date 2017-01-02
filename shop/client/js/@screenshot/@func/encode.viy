@@ -1,0 +1,59 @@
+function encode(input) {
+	var n,delta,handledCPCount,basicLength,bias,j,m,q,k,t,currentValue,output = [],inputLength,handledCPCountPlusOne,baseMinusT,qMinusT;
+
+	input = ucs2decode(input);
+	inputLength = input.length;
+	n = initialN;
+	delta = 0;
+	bias = initialBias;
+
+	for(j=0;j<inputLength;++j){
+		currentValue = input[j];
+		if(currentValue < 0x80)output.push(stringFromCharCode(currentValue));
+	}
+
+	handledCPCount = basicLength = output.length;
+
+	if(basicLength)output.push(delimiter);
+
+	while(handledCPCount < inputLength){
+		for(m = maxInt,j=0;j<inputLength;++j){
+			currentValue = input[j];
+			if(currentValue >= n && currentValue < m)m = currentValue;
+		}
+
+		handledCPCountPlusOne = handledCPCount + 1;
+		if (m - n > floor((maxInt - delta) / handledCPCountPlusOne))error('overflow');
+
+		delta += (m - n) * handledCPCountPlusOne;
+		n = m;
+
+		for(j=0;j<inputLength;++j){
+			currentValue = input[j];
+
+			if(currentValue < n && ++delta > maxInt)error('overflow');
+
+			if(currentValue == n){
+				for (q = delta, k = base; /* no condition */; k += base) {
+					t = k <= bias ? tMin : (k >= bias + tMax ? tMax : k - bias);
+					if(q < t)break;
+					qMinusT = q - t;
+					baseMinusT = base - t;
+					output.push( stringFromCharCode(digitToBasic(t + qMinusT % baseMinusT, 0)) );
+					q = floor(qMinusT / baseMinusT);
+				}
+
+				output.push(stringFromCharCode(digitToBasic(q, 0)));
+				bias = adapt(delta, handledCPCountPlusOne, handledCPCount == basicLength);
+				delta = 0;
+				++handledCPCount;
+			}
+		}
+
+		++delta;
+		++n;
+
+	}
+	
+	return output.join('');
+}

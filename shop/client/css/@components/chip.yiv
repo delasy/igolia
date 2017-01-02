@@ -1,0 +1,8 @@
+/* chip */
+.ig-chip{height:32px;padding:0 12px;border:0;border-radius:16px;background-color:#dedede;display:inline-block;white-space:nowrap;user-select:none;outline:0;}
+.ig-chip--deletable{padding-right:4px}
+.ig-chip:active{background:#d6d6d6;}
+.ig-chip__text{font-size:13px;vertical-align:middle;display:inline-block;color:rgba(0,0,0,.87);text-align:left;line-height:32px;}
+.ig-chip__btn{height:24px;width:24px;background:transparent;opacity:.54;cursor:pointer;padding:0;margin:0 0 0 4px;font-size:13px;text-decoration:none;color:rgba(0,0,0,.87);border:none;outline:none;vertical-align:middle;overflow:hidden;text-align:center;display:none;}
+.ig-chip--deletable .ig-chip__btn{display:inline-block;}
+.ig-chip__icon{height:32px;width:32px;border-radius:16px;margin-right:8px;font-size:18px;line-height:32px;display:inline-block;vertical-align:middle;overflow:hidden;text-align:center;margin-left:-12px;background:var(--ig-primary);color:var(--ig-primary__text);}

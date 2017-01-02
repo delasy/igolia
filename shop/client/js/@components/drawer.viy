@@ -1,0 +1,40 @@
+function(el,autoload){
+	var rn = {};
+	if(autoload){
+		var targets=el.hasAttribute('data-targets')&&el.getAttribute('data-targets').split('|')?el.getAttribute('data-targets').split('|'):false;
+		if(targets[0]==='')targets = false;
+		
+		for(var i=0;i<targets.length;i++){
+			var target = targets[i];
+
+			if(!d.getElementById(target))continue;
+
+			d.getElementById(target).addEventListener('click',function(){
+				rn.open();
+			});
+		}
+
+		el.addEventListener('click',function(e){
+			rn.close();
+		});
+		el.children[0].addEventListener('click',function(e){
+			e.stopPropagation();
+		});
+
+		d.addEventListener('keyup',function(e){
+			if(e.which === 27)rn.close();
+		});
+	}
+	rn = {
+		close:function(){
+			ithis[removeClass](el,'ig-drawer--opened');
+			ithis[removeClass](d.body,'hide-y-scroll');
+		},
+		open:function(){
+			ithis[addClass](el,'ig-drawer--opened');
+			ithis[addClass](d.body,'hide-y-scroll');
+		}
+	};
+
+	return rn;
+}

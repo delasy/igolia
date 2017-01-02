@@ -1,0 +1,9 @@
+function(){
+	return Math.max(
+		d.body.scrollHeight,
+		d.body.offsetHeight,
+		d.documentElement.clientHeight,
+		d.documentElement.scrollHeight,
+		d.documentElement.offsetHeight
+	);
+}

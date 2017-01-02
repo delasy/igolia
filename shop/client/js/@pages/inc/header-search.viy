@@ -1,0 +1,42 @@
+var newSearchDisplayHide = function(el){
+	ithis[removeClass](d.getElementById('headerSearchWrapper'),'ig-toolbar__section--phone');
+	d.body.style.overflow = '';
+};
+var newSearchPage = function(ev){
+	var access = 0;
+	var t = d.getElementById('headerSearch');
+	var empty = d.getElementById('headerSearchEmptyIcon');
+
+	var v = t.value;
+
+	if( (ev&&ev.which&&ev.which === 13) || (ev === 'img') )access = 1;
+
+	if(v)empty.disabled = false;
+	else empty.disabled = true;
+
+	if(access){
+		if(!v)return false;
+		v = encodeURIComponent(v);
+		w.location.href = '/search?q='+v;
+	}
+};
+var newSearchDisplay = function(el){
+	ithis[addClass](d.getElementById('headerSearchWrapper'),'ig-toolbar__section--phone');
+	d.body.style.overflow = 'hidden';
+	d.getElementById('headerSearch').focus();
+};
+var startDictation = <? include startDictation.viy ?>;
+d.getElementById('headerSearch').addEventListener('keyup',function(e){newSearchPage(e)});
+d.getElementById('headerMobileSearchIcon').addEventListener('click',function(){newSearchDisplay('img')});
+d.getElementById('headerSearchEmptyIcon').addEventListener('click',function(){
+	d.getElementById('headerSearch').value = '';
+	this.disabled = true;
+	d.getElementById('headerSearch').focus();
+});
+d.getElementById('headerSearchIcon').addEventListener('click',function(){newSearchPage('img')});
+d.getElementById('mobileSearchBack').addEventListener('click',newSearchDisplayHide);
+d.getElementById('searchWB').addEventListener('click',newSearchDisplayHide);
+
+d.getElementById('headerSpeechIcon').addEventListener('click',function(){startDictation(this)});
+
+newSearchPage();

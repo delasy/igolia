@@ -1,0 +1,25 @@
+function(type,params){
+	params = params || {};
+	params.style = params.style || {};
+	var cls = params.className || false;
+
+	var el = d.createElement(type);
+	Object.assign(el.style,params.style);
+	
+	if(cls)el.className = cls;
+	if(params.innerHTML)el.innerHTML = params.innerHTML;
+	if(params.href)el.href = params.href;
+	if(params.id)el.id = params.id;
+	if(params.name)el.name = params.name;
+	if(params.value)el.value = params.value;
+
+	for(var key in params)if(params.hasOwnProperty(key)){
+		var item = params[key];
+
+		if(key.substr(0,4)!=='attr')continue;
+
+		el.setAttribute(item.name,item.value);
+	}
+
+	return el;
+}

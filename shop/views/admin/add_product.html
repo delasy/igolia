@@ -1,0 +1,9 @@
+<div><a href="/admin/products">Back</a></div>
+<form method="post" action="/admin/add_product" enctype="multipart/form-data">
+	<input type="hidden" value="<%=c%>" name="c">
+	<% for(var i=0;i<fields.length;i++){ %>
+		<input name="<%=fields[i]%>" required placeholder="<%=fields[i]%>">
+	<% } %>
+    <input type="file" name="photos" required multiple accept="image/x-png,image/jpeg">
+	<input type="submit">
+</form>

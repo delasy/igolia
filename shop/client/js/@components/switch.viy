@@ -1,0 +1,97 @@
+function(el,autoload){
+	if(!el)return;
+	var pel=el.parentNode,label=pel,input=el,rn;
+	var name = el.name;
+
+	if(autoload){
+		var cba = el.hasAttribute('data-cba') ? el.getAttribute('data-cba') : false;
+		var cbc = el.hasAttribute('data-cbc') ? el.getAttribute('data-cbc') : false;
+
+		var id = el.id ? el.id : name;
+		var datalabel = el.getAttribute('data-label');
+
+		var span,track,thumb;
+		label = d.createElement('label');
+		input = d.createElement('input');
+		span = d.createElement('span');
+		track = d.createElement('span');
+		thumb = d.createElement('span');
+
+		label.className = 'ig-switch';
+
+		input.className = 'ig-switch__input';
+		input.type = el.type;
+		input.id = id;
+		input.name = el.name;
+		if(el.checked){
+			label.className += ' ig-switch--checked';
+			input.checked = true;
+		}
+		if(el.disabled){
+			label.className += ' ig-switch--disabled';
+			input.disabled = true;
+		}
+
+		span.className = 'ig-switch__label';
+		span.innerHTML = datalabel;
+
+		track.className = 'ig-switch__track';
+
+		thumb.className = 'ig-switch__thumb';
+
+		label.appendChild(input);
+		label.appendChild(span);
+		label.appendChild(track);
+		label.appendChild(thumb);
+
+		pel.insertBefore(label,el);
+		pel.removeChild(el);
+
+		input.addEventListener('change',function(){
+			if(this.checked){
+				ithis[addClass](label,'ig-switch--checked');
+			}else{
+				ithis[removeClass](label,'ig-switch--checked');
+			}
+
+			if(rn.value()){
+				if(typeof w[cba] === 'function')w[cba]();
+			}else{
+				if(typeof w[cbc] === 'function')w[cbc]();
+			}
+
+			if(ithis[hasClass](label,'ig-switch--animating'))return;
+
+			ithis[addClass](label,'ig-switch--animating');
+
+			rn.error_remove();
+
+			setTimeout(function(){
+				ithis[removeClass](label,'ig-switch--animating');
+			},300);
+		});
+	}
+
+	rn = {
+		error:function(){
+			ithis[addClass](label,'ig-switch--warning');
+		},
+		error_remove:function(){
+			ithis[removeClass](label,'ig-switch--warning');
+		},
+		disable:function(){
+			ithis[addClass](label,'ig-switch--disabled');
+			input.disabled = true;
+		},
+		enable:function(){
+			ithis[removeClass](label,'ig-switch--disabled');
+			input.disabled = false;
+		},
+		value:function(){
+			if(input.checked === true)return true;
+			else return false;
+		},
+	};
+
+	return rn;
+}

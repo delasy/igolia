@@ -1,0 +1,42 @@
+<div id="preheader" class="ig-preheader ig-preheader--water ig-primary"></div>
+<div class="ig-form">
+	<div class="container row">
+		<div class="col-lg-6 col-md-8 col-sm-10 col-12 ig-sh2 ig-form__card">
+			<h1 class="sip__title">Sign in</h1>
+
+			<form id="signin_form" autocomplete="off">
+
+
+<input data-igload="iginput" value="admin" type="text" name="silogin" data-label="Login...">
+<input data-igload="iginput" value="..." type="password" name="sipass" data-label="Password..." autocomplete="new-password">
+
+
+				<div class="sip__fpass">
+					<a class="ig-seconry__text" href="/fpass">Forgot password?</a>
+				</div>
+				<div class="g-recaptcha" id="recaptcha"></div>
+
+<script>
+window.recaptchawidget = null;
+
+function processrecaptcha(){
+	document.getElementById('signin_form_btn').disabled=false;
+};
+function processexpiredrecaptcha(){
+	document.getElementById('signin_form_btn').disabled=true;
+}
+function recaptchacallback(){
+	window.recaptchawidget = grecaptcha.render('recaptcha',{
+		'sitekey':'<?=scope.recaptcha?>',
+		'callback':processrecaptcha,
+		'expired-callback':processexpiredrecaptcha
+	});
+}
+</script>
+<script src="https://www.google.com/recaptcha/api.js?onload=recaptchacallback&render=explicit"></script>
+
+				<button disabled id="signin_form_btn" class="ig-btn ig-btn--primary ig-btn--sign" data-igload="igripple">SIGN</button>
+			</form>
+		</div>
+	</div>
+</div>

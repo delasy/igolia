@@ -1,0 +1,62 @@
+(function(root){
+
+	var freeExports = typeof exports === 'object' && exports;
+	var freeModule = typeof module === 'object' && module && module.exports === freeExports && module;
+	var freeGlobal = typeof global === 'object' && global;
+	if (freeGlobal.global === freeGlobal || freeGlobal.window === freeGlobal)root = freeGlobal;
+
+	var	punycode,
+
+	maxInt = 2147483647,
+	base = 36,
+	tMin = 1,
+	tMax = 26,
+	skew = 38,
+	damp = 700,
+	initialBias = 72,
+	initialN = 128,
+	delimiter = '-',
+	regexPunycode = /^xn--/,
+	regexNonASCII = /[^ -~]/,
+	regexSeparators = /\x2E|\u3002|\uFF0E|\uFF61/g,
+
+	errors = {'overflow':'Overflow: input needs wider integers to process','not-basic':'Illegal input >= 0x80 (not a basic code point)','invalid-input':'Invalid input'},
+
+	/** Convenience shortcuts */
+	baseMinusTMin = base - tMin,
+	floor = Math.floor,
+	stringFromCharCode = String.fromCharCode,
+	key;
+
+<| include @func/error.viy /|>;
+<| include @func/map.viy /|>;
+<| include @func/mapDomain.viy /|>;
+<| include @func/ucs2decode.viy /|>;
+<| include @func/ucs2encode.viy /|>;
+<| include @func/basicToDigit.viy /|>;
+<| include @func/digitToBasic.viy /|>;
+<| include @func/adapt.viy /|>;
+<| include @func/decode.viy /|>;
+<| include @func/encode.viy /|>;
+<| include @func/toUnicode.viy /|>;
+<| include @func/toASCII.viy /|>;
+
+	punycode = {
+		'version': '1.2.4',
+		'ucs2': {
+			'decode': ucs2decode,
+			'encode': ucs2encode
+		},
+		'decode': decode,
+		'encode': encode,
+		'toASCII': toASCII,
+		'toUnicode': toUnicode
+	};
+
+	if(typeof define == 'function' && typeof define.amd == 'object' && define.amd)define('punycode', function(){return punycode});
+	else if (freeExports && !freeExports.nodeType) {
+		if(freeModule)freeModule.exports = punycode;
+		else for(key in punycode)punycode.hasOwnProperty(key) && (freeExports[key] = punycode[key]);
+	} else root.punycode = punycode;
+
+}(this));

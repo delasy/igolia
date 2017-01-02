@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700|Material+Icons" rel="stylesheet">
+	<style><? include ../client/css/index.yiv ?></style>
+	<script><? include ../client/js/index.viy ?></script>
+	<link rel="shortcut icon" href="http://htmlbook.ru/favicon.ico">
+</head>
+<body>
+
+<header data-waterfallto="preheader" data-theme="primary" data-igload="igtoolbar"></header>
+
+<h1>With ripple</h1>
+
+<button data-igload="igripple" class="ig-btn">default</button>
+<button data-igload="igripple" class="ig-btn" disabled>disabled</button>
+<button data-igload="igripple" class="ig-btn ig-btn--lil">little btn</button>
+<button data-igload="igripple" class="ig-btn ig-btn--primary">primary</button>
+<button data-igload="igripple" class="ig-btn ig-btn--primary" disabled>disabled primary</button>
+<button data-igload="igripple" class="ig-btn ig-btn--seconry">seconry</button>
+<button data-igload="igripple" class="ig-btn ig-btn--seconry" disabled>disabled seconry</button>
+<button data-igload="igripple" class="ig-btn ig-btn--sh">shadow</button>
+<button data-igload="igripple" class="ig-btn ig-btn--primary ig-btn--sh">primary shadow</button>
+<button data-igload="igripple" class="ig-btn ig-btn--seconry ig-btn--sh">seconry shadow</button>
+<button data-igload="igripple" class="ig-btn">default very very very very very long button</button>
+
+<div id="preheader"></div>
+<h1>No ripple</h1>
+
+<button class="ig-btn">default</button>
+<button class="ig-btn ig-btn--lil">little btn</button>
+<button class="ig-btn ig-btn--primary">primary</button>
+<button class="ig-btn ig-btn--seconry">seconry</button>
+<button class="ig-btn ig-btn--sh">shadow</button>
+<button class="ig-btn ig-btn--primary ig-btn--sh">primary shadow</button>
+<button class="ig-btn ig-btn--seconry ig-btn--sh">seconry shadow</button>
+
+<h1>Link tag</h1>
+
+<a href="#" data-igload="igripple" class="ig-btn">default</a>
+<a href="#" data-igload="igripple" class="ig-btn ig-btn--lil">little btn</a>
+<a href="#" data-igload="igripple" class="ig-btn ig-btn--primary">primary</a>
+<a href="#" data-igload="igripple" class="ig-btn ig-btn--seconry">seconry</a>
+<a href="#" data-igload="igripple" class="ig-btn ig-btn--sh">shadow</a>
+<a href="#" data-igload="igripple" class="ig-btn ig-btn--primary ig-btn--sh">primary shadow</a>
+<a href="#" data-igload="igripple" class="ig-btn ig-btn--seconry ig-btn--sh">seconry shadow</a>
+
+<h1>Icons</h1>
+
+<button data-igload="igripple" class="ig-btn ig-btn--icon">menu</button>
+<button data-igload="igripple" class="ig-btn ig-btn--icon" disabled>menu</button>
+<button data-igload="igripple" class="ig-btn ig-btn--icon ig-btn--primary">menu</button>
+<button data-igload="igripple" class="ig-btn ig-btn--icon ig-btn--primary" disabled>menu</button>
+<button data-igload="igripple" class="ig-btn ig-btn--icon ig-btn--seconry">menu</button>
+<button data-igload="igripple" class="ig-btn ig-btn--icon ig-btn--seconry" disabled>menu</button>
+<button data-igload="igripple" class="ig-btn ig-btn--icon ig-btn--sh">menu</button>
+<button data-igload="igripple" class="ig-btn ig-btn--icon ig-btn--primary ig-btn--sh">menu</button>
+<button data-igload="igripple" class="ig-btn ig-btn--icon ig-btn--seconry ig-btn--sh">menu</button>
+
+<h1>Lil icons</h1>
+
+<button data-igload="igripple" class="ig-btn ig-btn--icon ig-btn--lil">menu</button>
+<button data-igload="igripple" class="ig-btn ig-btn--icon ig-btn--lil" disabled>menu</button>
+<button data-igload="igripple" class="ig-btn ig-btn--icon ig-btn--primary ig-btn--lil">menu</button>
+<button data-igload="igripple" class="ig-btn ig-btn--icon ig-btn--primary ig-btn--lil" disabled>menu</button>
+<button data-igload="igripple" class="ig-btn ig-btn--icon ig-btn--seconry ig-btn--lil">menu</button>
+<button data-igload="igripple" class="ig-btn ig-btn--icon ig-btn--seconry ig-btn--lil" disabled>menu</button>
+<button data-igload="igripple" class="ig-btn ig-btn--icon ig-btn--sh ig-btn--lil">menu</button>
+<button data-igload="igripple" class="ig-btn ig-btn--icon ig-btn--primary ig-btn--sh ig-btn--lil">menu</button>
+<button data-igload="igripple" class="ig-btn ig-btn--icon ig-btn--seconry ig-btn--sh ig-btn--lil">menu</button>
+
+<h1>Badges</h1>
+
+<div class="ig-badge" data-badge="3">
+	<button data-igload="igripple" class="ig-btn">default</button>
+</div>
+<div class="ig-badge ig-badge--material" data-badge="dashboard">
+	<button data-igload="igripple" class="ig-btn">default</button>
+</div>
+<div class="ig-badge ig-badge--icon" data-badge="3">
+	<button data-igload="igripple" class="ig-btn ig-btn--icon">menu</button>
+</div>
+<div class="ig-badge ig-badge--icon" data-badge="3">
+	<button data-igload="igripple" class="ig-btn ig-btn--icon ig-btn--lil">menu</button>
+</div>
+
+<h1>Grid</h1>
+
+<div class="container">
+	<div class="row">
+		<div class="col-6 demo-cell">col-6</div>
+		<div class="col-6 demo-cell">col-6</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-4 demo-cell">col-sm-4</div>
+		<div class="col-sm-4 demo-cell">col-sm-4</div>
+		<div class="col-sm-4 demo-cell">col-sm-4</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-3 demo-cell">col-md-3</div>
+		<div class="col-md-3 demo-cell">col-md-3</div>
+		<div class="col-md-3 demo-cell">col-md-3</div>
+		<div class="col-md-3 demo-cell">col-md-3</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-2 demo-cell">col-lg-2</div>
+		<div class="col-lg-2 demo-cell">col-lg-2</div>
+		<div class="col-lg-2 demo-cell">col-lg-2</div>
+		<div class="col-lg-2 demo-cell">col-lg-2</div>
+		<div class="col-lg-2 demo-cell">col-lg-2</div>
+		<div class="col-lg-2 demo-cell">col-lg-2</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xl-1 demo-cell">col-xl-1</div>
+		<div class="col-xl-1 demo-cell">col-xl-1</div>
+		<div class="col-xl-1 demo-cell">col-xl-1</div>
+		<div class="col-xl-1 demo-cell">col-xl-1</div>
+		<div class="col-xl-1 demo-cell">col-xl-1</div>
+		<div class="col-xl-1 demo-cell">col-xl-1</div>
+		<div class="col-xl-1 demo-cell">col-xl-1</div>
+		<div class="col-xl-1 demo-cell">col-xl-1</div>
+		<div class="col-xl-1 demo-cell">col-xl-1</div>
+		<div class="col-xl-1 demo-cell">col-xl-1</div>
+		<div class="col-xl-1 demo-cell">col-xl-1</div>
+		<div class="col-xl-1 demo-cell">col-xl-1</div>
+	</div>
+</div>
+
+<h1>Textfields</h1>
+
+<div class="container">
+	<div class="row">
+		<div class="col-1"></div>
+		<div class="col-2">
+			<input data-igload="iginput" disabled id="wring" type="text" name="sut3" data-label="Hello world!">
+		</div>
+		<div class="col-1"></div>
+		<div class="col-3">
+			<input data-igload="iginput" type="text" name="sut1" data-label="Hello world! Mega long long long long Mega long long long long" value="hi">
+		</div>
+		<div class="col-1"></div>
+		<div class="col-4">
+			<input data-igload="iginput" type="text" name="sut2" data-label="Hello world!">
+		</div>
+		<div class="clearfix"></div>
+
+		<div class="col-1"></div>
+		<div class="col-10">
+			<input data-igload="iginput" type="text" name="sut3" data-label="Hello world! Mega long long long long">
+		</div>
+		<div class="col-1"></div>
+		<div class="clearfix"></div>
+
+		<div class="col-1"></div>
+		<div class="col-10">
+			<textarea data-type="textarea" data-igload="iginput" type="text" name="sut4" data-label="Hello world! Mega long long long long"></textarea>
+		</div>
+		<div class="col-1"></div>
+	</div>
+</div>
+
+<h1>Checkbox's</h1>
+
+<div class="container">
+	<div class="row">
+		<div class="col-1"></div>
+		<div class="col-10" style="margin-bottom:30px">
+			<input checked data-igload="igcheckbox" type="checkbox" name="sutc1" data-label="My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox">
+		</div>
+		<div class="col-1"></div>
+
+		<div class="clearfix"></div>
+
+		<div class="col-1"></div>
+		<div class="col-2">
+			<input checked data-igload="igcheckbox" type="checkbox" name="sutc2" data-label="LOL LOL LOL My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox">
+		</div>
+		<div class="col-1"></div>
+		<div class="col-3">
+			<input disabled data-igload="igcheckbox" type="checkbox" name="sutc3" data-label="LOL LOL LOL">
+		</div>
+		<div class="col-1"></div>
+		<div class="col-4">
+			<input data-igload="igcheckbox" type="checkbox" name="sutc4" data-label="LOL LOL LOL">
+		</div>
+
+		<div class="clearfix"></div>
+
+		<div class="col-1"></div>
+		<div class="col-5" style="margin-bottom:30px">
+			<input checked data-igload="igcheckbox" type="radio" name="sutcr" id="sutcr1" data-label="My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox" value="0">
+		</div>
+		<div class="col-5" style="margin-bottom:30px">
+			<input data-igload="igcheckbox" type="radio" name="sutcr" id="sutcr2" data-label="My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox" value="1">
+		</div>
+		<div class="col-1"></div>
+
+		<div class="clearfix"></div>
+
+		<div class="col-1"></div>
+		<div class="col-5" style="margin-bottom:30px">
+			<input checked data-igload="igcheckbox" type="radio" name="sutcrtt" data-label="My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox" value="1">
+		</div>
+		<div class="col-5" style="margin-bottom:30px">
+			<input data-igload="igcheckbox" type="radio" name="sutcrtt" id="sutcr4" data-label="My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox My own checkbox" value="0" disabled>
+		</div>
+		<div class="col-1"></div>
+	</div>
+</div>
+
+<h1>Switch</h1>
+
+<div class="container">
+	<div class="row">
+		<div class="col-1"></div>
+		<div class="col-10" style="margin-bottom:30px">
+			<input checked data-igload="igswitch" data-cba="" type="checkbox" name="suts1" data-label="My own switch My own switch My own switch My own switch My own switch My own switch My own switch My own switch My own switch My own switch My own switch My own switch My own switch My own switch My own switch ">
+		</div>
+		<div class="col-1"></div>
+		<div class="col-1"></div>
+		<div class="col-2">
+			<input checked data-igload="igswitch" data-cba="" type="checkbox" name="suts2" data-label="My own switch My own switch My own switch My own switch">
+		</div>
+		<div class="col-2">
+			<input disabled checked data-igload="igswitch" data-cba="" type="checkbox" name="suts3" data-label="My own switch">
+		</div>
+		<div class="col-4">
+			<input checked data-igload="igswitch" data-cba="" data-cbc="" type="checkbox" name="suts4" data-label="My own switch">
+		</div>
+		<div class="col-2">
+			<input checked data-igload="igswitch" data-cba="" type="checkbox" name="suts5" data-label="My own switch">
+		</div>
+		<div class="col-1"></div>
+	</div>
+</div>
+
+<h1>Loader</h1>
+
+<div class="container">
+	<div class="row">
+		<div class="col-6 demo-cell" style="text-align:left">
+			<div data-igload="igspinner"></div>
+		</div>
+		<div class="col-4 demo-cell" style="text-align:left">
+			<div data-igload="igspinner"></div>
+		</div>
+		<div class="col-2 demo-cell" style="text-align:left">
+			<div data-igload="igspinner"></div>
+		</div>
+	</div>
+</div>
+
+<h1>Typography</h1>
+
+<div class="container">
+	<div class="row">
+		<div class="col-12">
+			<h1 class="ig-text--d4">ig-text--d4</h1>
+			<h1 class="ig-text--d3">ig-text--d3</h1>
+			<h1 class="ig-text--d2">ig-text--d2</h1>
+			<h1 class="ig-text--d1">ig-text--d1</h1>
+			<h1 class="ig-text--h">ig-text--h</h1>
+			<h1 class="ig-text--t">ig-text--t</h1>
+			<h1 class="ig-text--s2">ig-text--s2</h1>
+			<h1 class="ig-text--s1">ig-text--s1</h1>
+			<h1 class="ig-text--b2">ig-text--b2</h1>
+			<h1 class="ig-text--b1">ig-text--b1</h1>
+		</div>
+	</div>
+</div>
+
+<h1>Tool tip</h1>
+
+<div class="container">
+	<div class="row">
+		<div class="col-12">
+			<div class="ig-tooltip">
+				<h1 class="ig-text--d3">ig-text--d3</h1>
+				<span class="ig-tooltip__inner">Hello</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<h1>Snackbar</h1>
+
+<button class="ig-btn" onclick="ig.components.snackbar('Hello world!')">Show</button>
+
+<h1>Menu</h1>
+
+<div class="ig-menu ig-menu--topleft">
+	<button data-igload="igripple|igmenu" class="ig-btn">Top left</button>
+	<div class="ig-menu__content">
+		<ul class="ig-menu__items">
+			<li class="ig-menu__item" tabindex="0">Hallo1</li>
+			<li class="ig-menu__item" tabindex="0">Hallo2</li>
+			<li class="ig-menu__item" tabindex="0">Hallo3</li>
+			<li class="ig-menu__delimiter"></li>
+			<li class="ig-menu__item" tabindex="0">Hallo4</li>
+		</ul>
+	</div>
+</div>
+
+<div class="ig-menu ig-menu--bottomleft">
+	<button data-igload="igripple|igmenu" class="ig-btn">Bottom left</button>
+	<div class="ig-menu__content">
+		<ul class="ig-menu__items">
+			<li class="ig-menu__item" tabindex="0">Hallo1</li>
+			<li class="ig-menu__item" tabindex="0">Hallo2</li>
+			<li class="ig-menu__item" tabindex="0">Hallo3</li>
+			<li class="ig-menu__delimiter"></li>
+			<li class="ig-menu__item" tabindex="0">Hallo4</li>
+		</ul>
+	</div>
+</div>
+
+<div class="ig-menu ig-menu--topright">
+	<button data-igload="igripple|igmenu" class="ig-btn">Top right</button>
+	<div class="ig-menu__content">
+		<ul class="ig-menu__items">
+			<li class="ig-menu__item" tabindex="0">Hallo1</li>
+			<li class="ig-menu__item" tabindex="0">Hallo2</li>
+			<li class="ig-menu__item" tabindex="0">Hallo3</li>
+			<li class="ig-menu__delimiter"></li>
+			<li class="ig-menu__item" tabindex="0">Hallo4</li>
+		</ul>
+	</div>
+</div>
+
+<h1>Chips</h1>
+
+<div data-igload="igchip" data-cb="alert" data-label="Sample chip"></div>
+<div data-igload="igchip" data-cb="alert" data-label="Sample chip2" data-btn="true" data-value="chip"></div>
+<div data-igload="igchip" data-label="Sample chip2" data-btn="true" data-icon="dashboard"></div>
+
+<h1>Slider</h1>
+
+<div class="container">
+	<div class="row">
+		<div class="col-3 demo-cell-range">
+			<input data-igload="igrange" data-vertical="true" type="range" min="0" max="100" step="10" value="0" name="sus1">
+		</div>
+		<div class="col-3 demo-cell-range">
+			<input data-igload="igrange" data-vertical="true" type="range" min="0" max="100" step="10" value="0" name="sus1">
+		</div>
+		<div class="col-3 demo-cell-range">
+			<input data-igload="igrange" data-vertical="true" type="range" min="0" max="100" step="10" value="0" name="sus1">
+		</div>
+		<div class="col-3 demo-cell-range">
+			<input data-igload="igrange" data-vertical="true" type="range" min="0" max="100" step="10" value="0" name="sus1">
+		</div>
+
+		<div class="clearfix"></div>
+
+		<div class="col-1"></div>
+		<div class="col-10">
+			<input data-igload="igrange" data-cb="func" type="range" min="0" max="100" step="10" value="0" name="sus11">
+		</div>
+		<div class="col-1"></div>
+		<script>function func(a){ig.components.range(document.getElementById('suss1')).value(+a);}</script>
+
+		<div class="col-1"></div>
+		<div class="col-10">
+			<input data-igload="igrange" type="range" min="0" max="100" step="10" value="0" name="suss1">
+		</div>
+		<div class="col-1"></div>
+
+		<div class="clearfix"></div>
+
+		<div class="col-1"></div>
+		<div class="col-2">
+			<input data-igload="igrange" type="range" min="0" max="100" step="0" value="0" name="sus2">
+		</div>
+		<div class="col-1"></div>
+		<div class="col-3">
+			<input data-igload="igrange" data-cb="alert" type="range" min="0" max="100" step="0" value="0" name="sus3">
+		</div>
+		<div class="col-4">
+			<input data-igload="igrange" type="range" min="0" max="100" step="20" value="0" name="sus4">
+		</div>
+		<div class="col-1"></div>
+	</div>
+</div>
+
+<h1>Select</h1>
+
+<div class="container">
+	<div class="row">
+		<div class="col-1"></div>
+		<div class="col-10">
+			<select data-igload="igselect" data-cb="alert" class="ig-select" name="suse1">
+				<option value="0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, animi, nihil. Neque soluta veniam corporis eligendi, quaerat ratione autem distinctio.</option>
+				<option value="1" selected>Egg</option>
+				<option value="2">Coconout</option>
+				<option value="3" disabled>Coconout</option>
+				<option value="4">Coconout</option>
+				<option value="5">Coconout</option>
+				<option value="6">Coconout</option>
+				<option value="7">Coconout</option>
+				<option value="8">Coconout</option>
+				<option value="9">Coconout</option>
+				<option value="10">Coconout</option>
+				<option value="11">Coconout</option>
+				<option value="12">Coconout</option>
+				<option value="13">Coconout</option>
+				<option value="14">Coconout</option>
+				<option value="16">Coconout</option>
+				<option value="17">Coconout</option>
+			</select>
+		</div>
+		<div class="col-1"></div>
+
+		<div class="col-1"></div>
+		<div class="col-5">
+			<select data-igload="igselect" class="ig-select" name="suse2">
+				<option value="0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, animi, nihil. Neque soluta veniam corporis eligendi, quaerat ratione autem distinctio.</option>
+				<option value="1">Egg</option>
+				<option value="2">Coconout</option>
+				<option value="3" disabled>Coconout</option>
+				<option value="4">Coconout</option>
+				<option value="5">Coconout</option>
+				<option value="6">Coconout</option>
+				<option value="7">Coconout</option>
+				<option value="8">Coconout</option>
+				<option value="9">Coconout</option>
+				<option value="10">Coconout</option>
+				<option value="11">Coconout</option>
+				<option value="12">Coconout</option>
+				<option value="13">Coconout</option>
+				<option value="14">Coconout</option>
+				<option value="16">Coconout</option>
+				<option value="17">Coconout</option>
+			</select>
+		</div>
+		<div class="col-1"></div>
+		<div class="col-4">
+			<select data-igload="igselect" class="ig-select" name="suse3">
+				<option value="0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, animi, nihil. Neque soluta veniam corporis eligendi, quaerat ratione autem distinctio.</option>
+				<option value="1" selected>Egg</option>
+				<option value="2">Coconout</option>
+				<option value="3" disabled>Coconout</option>
+				<option value="4">Coconout</option>
+			</select>
+		</div>
+		<div class="col-1"></div>
+	</div>
+</div>
+
+<h1>Lists</h1>
+
+<div class="container">
+	<ul class="ig-list demo-list">
+		<li class="ig-list__item">
+			<span class="ig-list__text--first">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officia architecto, inventore, repudiandae eaque harum hic, porro deleniti autem a modi maxime, laudantium deserunt vel perferendis est aperiam nemo repellat.</span>
+		</li>
+		<li class="ig-list__item ig-list__item--icon-left">
+			<i class="material-icons">network_wifi</i>
+			<span class="ig-list__text--first">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officia architecto, inventore, repudiandae eaque harum hic, porro deleniti autem a modi maxime, laudantium deserunt vel perferendis est aperiam nemo repellat.</span>
+		</li>
+		<li class="ig-list__item ig-list__item--icon-right">
+			<span class="ig-list__text--first">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officia architecto, inventore, repudiandae eaque harum hic, porro deleniti autem a modi maxime, laudantium deserunt vel perferendis est aperiam nemo repellat.</span>
+			<i class="material-icons">network_wifi</i>
+		</li>
+		<li class="ig-list__item ig-list__item--image-left">
+			<img alt="..." src="https://material-components-web.appspot.com/images/animal1.svg">
+			<span class="ig-list__text--first">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officia architecto, inventore, repudiandae eaque harum hic, porro deleniti autem a modi maxime, laudantium deserunt vel perferendis est aperiam nemo repellat.</span>
+		</li>
+		<li class="ig-list__item ig-list__item--image-right">
+			<span class="ig-list__text--first">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officia architecto, inventore, repudiandae eaque harum hic, porro deleniti autem a modi maxime, laudantium deserunt vel perferendis est aperiam nemo repellat.</span>
+			<img alt="..." src="https://material-components-web.appspot.com/images/animal1.svg">
+		</li>
+		<li class="ig-list__item ig-list__item--image-left ig-list__item--icon-right">
+			<img alt="..." src="https://material-components-web.appspot.com/images/animal1.svg">
+			<span class="ig-list__text--first">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officia architecto, inventore, repudiandae eaque harum hic, porro deleniti autem a modi maxime, laudantium deserunt vel perferendis est aperiam nemo repellat.</span>
+			<i class="material-icons">network_wifi</i>
+		</li>
+		<li class="ig-list__item ig-list__item--image-right ig-list__item--icon-left">
+			<i class="material-icons">network_wifi</i>
+			<span class="ig-list__text--first">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officia architecto, inventore, repudiandae eaque harum hic, porro deleniti autem a modi maxime, laudantium deserunt vel perferendis est aperiam nemo repellat.</span>
+			<img alt="..." src="https://material-components-web.appspot.com/images/animal1.svg">
+		</li>
+		<li class="ig-list__item ig-list__item--multy">
+			<span class="ig-list__text--first">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officia architecto, inventore, repudiandae eaque harum hic, porro deleniti autem a modi maxime, laudantium deserunt vel perferendis est aperiam nemo repellat.</span>
+			<span class="ig-list__text--second">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officia architecto, inventore, repudiandae eaque harum hic, porro deleniti autem a modi maxime, laudantium deserunt vel perferendis est aperiam nemo repellat.</span>
+		</li>
+		<li class="ig-list__item ig-list__item--multy ig-list__item--icon-left">
+			<i class="material-icons">network_wifi</i>
+			<span class="ig-list__text--first">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officia architecto, inventore, repudiandae eaque harum hic, porro deleniti autem a modi maxime, laudantium deserunt vel perferendis est aperiam nemo repellat.</span>
+			<span class="ig-list__text--second">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officia architecto, inventore, repudiandae eaque harum hic, porro deleniti autem a modi maxime, laudantium deserunt vel perferendis est aperiam nemo repellat.</span>
+		</li>
+		<li class="ig-list__item ig-list__item--multy ig-list__item--icon-right">
+			<span class="ig-list__text--first">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officia architecto, inventore, repudiandae eaque harum hic, porro deleniti autem a modi maxime, laudantium deserunt vel perferendis est aperiam nemo repellat.</span>
+			<span class="ig-list__text--second">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officia architecto, inventore, repudiandae eaque harum hic, porro deleniti autem a modi maxime, laudantium deserunt vel perferendis est aperiam nemo repellat.</span>
+			<i class="material-icons">network_wifi</i>
+		</li>
+		<li class="ig-list__separator"></li>
+		<li class="ig-list__item ig-list__item--multy ig-list__item--image-left ig-list__item--icon-right">
+			<img alt="..." src="https://material-components-web.appspot.com/images/animal1.svg">
+			<span class="ig-list__text--first">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officia architecto, inventore, repudiandae eaque harum hic, porro deleniti autem a modi maxime, laudantium deserunt vel perferendis est aperiam nemo repellat.</span>
+			<span class="ig-list__text--second">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officia architecto, inventore, repudiandae eaque harum hic, porro deleniti autem a modi maxime, laudantium deserunt vel perferendis est aperiam nemo repellat.</span>
+			<i class="material-icons">network_wifi</i>
+		</li>
+		<li class="ig-list__separator--icon"></li>
+		<li class="ig-list__item ig-list__item--multy ig-list__item--image-right ig-list__item--icon-left">
+			<img alt="..." src="https://material-components-web.appspot.com/images/animal1.svg">
+			<span class="ig-list__text--first">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officia architecto, inventore, repudiandae eaque harum hic, porro deleniti autem a modi maxime, laudantium deserunt vel perferendis est aperiam nemo repellat.</span>
+			<span class="ig-list__text--second">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officia architecto, inventore, repudiandae eaque harum hic, porro deleniti autem a modi maxime, laudantium deserunt vel perferendis est aperiam nemo repellat.</span>
+			<i class="material-icons">network_wifi</i>
+		</li>
+	</ul>
+
+
+	<div class="ig-list-group demo-list-group">
+		<h1>List title</h1>
+		<ul class="ig-list demo-list">
+			<li class="ig-list__item">
+				<span class="ig-list__text--first">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officia architecto, inventore, repudiandae eaque harum hic, porro deleniti autem a modi maxime, laudantium deserunt vel perferendis est aperiam nemo repellat.</span>
+			</li>
+			<li class="ig-list__item">
+				<span class="ig-list__text--first">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officia architecto, inventore, repudiandae eaque harum hic, porro deleniti autem a modi maxime, laudantium deserunt vel perferendis est aperiam nemo repellat.</span>
+			</li>
+			<li class="ig-list__item">
+				<span class="ig-list__text--first">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officia architecto, inventore, repudiandae eaque harum hic, porro deleniti autem a modi maxime, laudantium deserunt vel perferendis est aperiam nemo repellat.</span>
+			</li>
+		</ul>
+		<hr class="ig-list__separator">
+		<h1>List title</h1>
+		<ul class="ig-list demo-list">
+			<li class="ig-list__item">
+				<span class="ig-list__text--first">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officia architecto, inventore, repudiandae eaque harum hic, porro deleniti autem a modi maxime, laudantium deserunt vel perferendis est aperiam nemo repellat.</span>
+			</li>
+			<li class="ig-list__item">
+				<span class="ig-list__text--first">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officia architecto, inventore, repudiandae eaque harum hic, porro deleniti autem a modi maxime, laudantium deserunt vel perferendis est aperiam nemo repellat.</span>
+			</li>
+		</ul>
+	</div>
+
+
+	<div class="ig-list-group demo-list-group">
+		<h1>Dangerous animals</h1>
+		<ul class="ig-list demo-list">
+			<li class="ig-list__item ig-list__item--multy ig-list__item--image-left ig-list__item--icon-right">
+				<img alt="..." src="https://material-components-web.appspot.com/images/animal1.svg">
+				<span class="ig-list__text--first">Snack</span>
+				<span class="ig-list__text--second">Dangerous: 12%</span>
+				<i class="material-icons">network_wifi</i>
+			</li>
+			<li class="ig-list__item ig-list__item--multy ig-list__item--image-left ig-list__item--icon-right">
+				<img alt="..." src="https://material-components-web.appspot.com/images/animal1.svg">
+				<span class="ig-list__text--first">Putty</span>
+				<span class="ig-list__text--second">Dangerous: 12.5%</span>
+				<i class="material-icons">network_wifi</i>
+			</li>
+			<li class="ig-list__item ig-list__item--multy ig-list__item--image-left ig-list__item--icon-right">
+				<img alt="..." src="https://material-components-web.appspot.com/images/animal1.svg">
+				<span class="ig-list__text--first">Kitten</span>
+				<span class="ig-list__text--second">Dangerous: 99.99%</span>
+				<i class="material-icons">network_wifi</i>
+			</li>
+		</ul>
+		<hr class="ig-list__separator--icon">
+		<h1>Gentle animals(ripple effect)</h1>
+		<ul class="ig-list demo-list">
+			<li data-igload="igripple" class="ig-list__item ig-list__item--image-left ig-list__item--icon-right">
+				<img alt="..." src="https://material-components-web.appspot.com/images/animal1.svg">
+				<span class="ig-list__text--first">Shark</span>
+				<i class="material-icons">network_wifi</i>
+			</li>
+			<li data-igload="igripple" class="ig-list__item ig-list__item--image-right ig-list__item--icon-left">
+				<img alt="..." src="https://material-components-web.appspot.com/images/animal1.svg">
+				<span class="ig-list__text--first">Tiger</span>
+				<i class="material-icons">network_wifi</i>
+			</li>
+		</ul>
+	</div>
+</div>
+
+
+<h1>Tabs</h1>
+
+<ul class="ig-tabs" data-igload="igtabs" data-cb="alert">
+	<li class="ig-tab" data-value="one" data-igload="igripple">First tab</li>
+	<li class="ig-tab" data-value="two" data-igload="igripple">Second tab</li>
+	<li class="ig-tab" data-value="three" data-igload="igripple">Third tab</li>
+	<li data-value="three" data-igload="igripple">Third tab</li>
+</ul>
+
+<ul class="ig-tabs ig-tabs--primary" data-igload="igtabs">
+	<li class="ig-tab material-icons ig-ripple--primary" data-value="one" data-igload="igripple">menu</li>
+	<li class="ig-tab material-icons ig-ripple--primary" data-value="two" data-igload="igripple">phone</li>
+	<li class="ig-tab material-icons ig-ripple--primary" data-value="three" data-igload="igripple">dashboard</li>
+</ul>
+
+<ul class="ig-tabs ig-tabs--multy ig-tabs--seconry" data-igload="igtabs" style="background:white">
+	<li class="ig-tab" data-value="one" data-igload="igripple">
+		<i class="material-icons">menu</i>
+		<span>menu</span>
+	</li>
+	<li class="ig-tab" data-value="two" data-igload="igripple">
+		<i class="material-icons">phone</i>
+		<span>phone</span>
+	</li>
+	<li class="ig-tab" data-value="three" data-igload="igripple">
+		<i class="material-icons">dashboard</i>
+		<span>dashboard</span>
+	</li>
+</ul>
+
+<h1>Tables</h1>
+
+<table class="ig-table ig-table--center ig-sh2" data-igload="igtable" id="besttable">
+	<thead>
+		<tr>
+			<th>Product (Blah Blah)</th>
+			<th>Quantity</th>
+			<th>Price</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="ig-table__td--left">Pen</td>
+			<td>1</td>
+			<td>1$</td>
+		</tr>
+		<tr>
+			<td class="ig-table__td--left">Pen</td>
+			<td>1</td>
+			<td>1$</td>
+		</tr>
+	</tbody>
+</table>
+
+<h1>drawer</h1>
+
+<aside class="ig-drawer" data-igload="igdrawer" data-targets="opendrawer|opendrawers">
+	<nav class="ig-drawer__drawer ig-sh16">
+		<nav class="ig-drawer__header">
+			<div class="ig-drawer__header__content ig-primary"></div>
+			<div class="ig-drawer__header__helper"></div>
+		</nav>
+		<nav class="ig-drawer__content">
+			<h1 class="ig-drawer__subheader">Subheader</h1>
+			<a class="ig-drawer__link" data-igload="igripple" href="#">test</a>
+			<a class="ig-drawer__link" href="/a">test</a>
+			<hr class="ig-drawer__delimiter">
+			<a class="ig-drawer__link" href="#">tesT</a>
+		</nav>
+		<nav class="ig-drawer__footer">
+			<span>hallo</span>
+		</nav>
+	</nav>
+</aside>
+
+<button id="opendrawer" class="ig-btn" data-igload="igripple">drawer</button>
+<button id="opendrawers" class="ig-btn" data-igload="igripple">drawer2</button>
+
+
+<h1>dialog</h1>
+
+<aside class="ig-dialog" data-igload="igdialog" data-targets="opendialog|opendialogs">
+	<div class="ig-dialog__dialog ig-sh24">
+		<div class="ig-dialog__header">
+			<div class="ig-dialog__header__title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, molestiae!</div>
+		</div>
+		<div class="ig-dialog__body">Hallo</div>
+		<div class="ig-dialog__footer">
+			<button class="ig-btn">Close</button>
+			<button class="ig-btn">Sign out</button>
+		</div>
+	</div>
+</aside>
+
+<button id="opendialog" class="ig-btn" data-igload="igripple">dialog</button>
+<button id="opendialogs" class="ig-btn" data-igload="igripple">dialog2</button>
+
+<script>ig.components.autoload();</script>
+</body>
+</html>

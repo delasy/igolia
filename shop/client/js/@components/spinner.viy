@@ -1,0 +1,11 @@
+function(el,autoload){
+	if(autoload){
+		var div = d.createElement('div');
+		div.className = 'ig-spinner__helper';
+
+		div.innerHTML = '<svg class="ig-spinner" width="34" height="34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg"><circle class="ig-spinner__path" fill="none" stroke-width="4" stroke-linecap="round" cx="17" cy="17" r="15"></circle></svg>';
+
+		el.parentNode.insertBefore(div,el);
+		el.parentNode.removeChild(el);
+	}
+}

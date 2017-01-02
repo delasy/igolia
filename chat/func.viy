@@ -1,0 +1,123 @@
+var PAGEX,PAGEY;
+function v(a){return document.getElementById(a);}
+document.onmousemove = function(e){
+	PAGEX = e.pageX;
+	PAGEY = e.pageY;
+}
+function getContent(){
+	var last = $(".messages_wrap:last");
+	var id = last.attr("id");
+	
+	$.get("get.php?id="+id,function(data){
+		if(data != ""){
+			var newid = parseFloat(id)+1;
+			var start = '<div class="messages_wrap" id="';
+			var middle = '">';
+			var end = '</div>';
+			if(!$(".messages_wrap[id='"+newid+"']").attr("id")){
+				$(".messages").append(start+newid+middle+data+end);
+				$("#messages").scrollTop(100000);
+			}
+		}
+	});
+	setTimeout("getContent()",500);
+}
+$(document).ready(function(){
+	$(".user_choose").click(function(){
+		$(".user").toggleClass("mobile");
+		$(this).toggleClass("back");
+	});
+
+	setTimeout(function(){
+		$("#messages").scrollTop(100000);
+	},500);
+	$(this).on("click",function(e){
+		$("#menu").css("display","none");
+	});
+	
+	$("#delete_message").click(function(){
+		var menu = $(this).parent().parent();
+		var mesid = menu.attr("mesid");
+		var url = "message.php?delete=1&mesid="+mesid;
+		$.get(url,function(data){
+			if(data != "success"){
+				$(".error").css("opacity","1");
+				$(".error").text(data);
+			}else{
+				$(".error").css("opacity","0");
+				var target = $(".messages_wrap[id='"+mesid+"']");
+				var targetText = target.find("p[oncontextmenu='return menu(this)']");
+				targetText.text("Message was deleted !");
+				targetText.css("background-color","#ed3b3b");
+				targetText.css("color","#fff");
+				targetText.attr("oncontextmenu","");
+			}
+		});
+	});
+	$("#edit_message").click(function(){
+		var menu = $(this).parent().parent();
+		var mesid = menu.attr("mesid");
+		
+		var target = $(".messageEdit");
+		target.show();
+		$("form[type='viy_edit']").attr("mesid",mesid);
+		var oldTarget = $(".messages_wrap[id='"+mesid+"']");
+		var oldTargetText = oldTarget.find("p[oncontextmenu='return menu(this)']").text();
+		document.getElementById("viy_message_edit").value = oldTargetText;
+	});
+	
+	$("form[type='viy_send']").submit(function(event){
+	var message = document.getElementById("viy_message").value;
+	document.getElementById("viy_message").value = "";
+	
+		$.ajax({type:"POST",url:'message.php',data:{message : message, submit : "viy"}})
+		.done(function(data){
+			if(data != "success"){
+				$(".error").css("opacity","1");
+				$(".error").text(data);
+			}else{
+				$(".error").css("opacity","0");
+			}
+			
+		});
+		event.preventDefault();
+	});
+	
+	$("form[type='viy_edit']").submit(function(event){
+		$(".messageEdit").toggle();
+		var mesid = $(this).attr("mesid");
+		var message = document.getElementById("viy_message_edit").value;
+		document.getElementById("viy_message_edit").value = "";
+	
+		$.ajax({type:"POST",url:'message.php',data:{update : 1, mesid : mesid, message : message, submit : "viy"}})
+		.done(function(data){
+			if(data != "success"){
+				$(".error").css("opacity","1");
+				$(".error").text(data);
+			}else{
+				$(".error").css("opacity","0");
+				var target = $(".messages_wrap[id='"+mesid+"']");
+				var targetText = target.find("p[oncontextmenu='return menu(this)']");
+				targetText.text(message);
+			}
+			
+		});
+		event.preventDefault();
+	});
+	setTimeout("getContent()",1000);
+});
+function info(a){
+	var id = a.getAttribute("userid");
+	var type = a.getAttribute("type");
+	var val = a.value;
+	var url = "ajax.php?userid="+id+"&type="+type+"&val="+val;
+	$.get(url);
+}
+function menu(a){
+	var parent = a.parentNode.parentNode;
+	var parentId = parent.getAttribute("id");
+	var t = v("menu");
+	t.setAttribute("style","display:block;top:"+PAGEY+"px;left:"+PAGEX+"px;");
+	t.setAttribute("mesid",parentId);
+	return false;
+}

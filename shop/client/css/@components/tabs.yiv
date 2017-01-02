@@ -1,0 +1,14 @@
+.ig-tabs{position:relative;}
+.ig-tab{color:var(--ig-primary__text);font-size:14px;font-weight:500;width:160px;display:inline-block;line-height:48px;height:48px;text-align:center;text-transform:uppercase;cursor:pointer;opacity:.6}
+.ig-tabs--multy .ig-tab{height:72px;display:inline-flex;align-items:center;justify-content:center;flex-direction: column;}
+.ig-tabs--multy .ig-tab span{color:var(--ig-primary__text);font-size:14px;font-weight:500;width:160px;display:inline-block;line-height:30px;text-align:center;text-transform:uppercase;cursor:pointer;}
+
+.ig-tab:hover{opacity:.8}
+.ig-tab.ig-tab--selected{opacity:1}
+.ig-tab__line{background:var(--ig-primary__text);position:absolute;left:0;bottom:0;height:2px;transition:all 240ms ease-out;margin-left:0;width:160px}
+
+.ig-tab.material-icons{text-transform:lowercase;font-size:24px;}
+
+.ig-tabs--seconry .ig-tab{color:var(--ig-seconry__text)}
+.ig-tabs--multy.ig-tabs--seconry .ig-tab span{color:var(--ig-seconry__text)}
+.ig-tabs--seconry .ig-tab__line{background:var(--ig-seconry__text);}

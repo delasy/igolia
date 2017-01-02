@@ -1,0 +1,34 @@
+function(el,autoload){
+	if(!autoload)return console.error('Toolbar method can ba called only from autoload!');
+	if(!el)return console.error('Element not present for toolbar!');
+
+	el.className = 'ig-toolbar';
+	el.className+= (el.hasAttribute('data-theme')&&el.getAttribute('data-theme')==='secondary')?' ig-toolbar--seconry':' ig-toolbar--primary';
+
+	var ph = d.getElementById(el.getAttribute('data-waterfallto'));
+
+	el.removeAttribute('data-waterfallto');
+	el.removeAttribute('data-theme');
+	el.removeAttribute('data-igload');
+
+	if(!ph)return console.error('Wrong waterfall_to element present!');
+
+	if(w.scrollY === 0)el.setAttribute('data-top','true');
+
+	w.addEventListener('scroll',function(){
+		var top = this.scrollY;
+		var hh = el.offsetHeight;
+		var phh = ph.offsetHeight;
+		var phtop = ithis[offset](ph).top;
+		var result = top > (phh+phtop-hh);
+
+		if(w.scrollY === 0)el.setAttribute('data-top','true');
+		else if(el.hasAttribute('data-top'))el.removeAttribute('data-top');
+
+		if(result)ithis[addClass](el,'ig-toolbar--below');
+		else ithis[removeClass](el,'ig-toolbar--below');
+		
+	});
+
+	w.scrollTo(0,0);
+}

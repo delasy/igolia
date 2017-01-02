@@ -1,0 +1,57 @@
+<div><a href="/admin/settings">Back</a></div>
+<div id="c"></div>
+<button onclick="addTarget()">ADD</button>
+<button onclick="saveTargets()">SAVE</button>
+
+<form method="post" style="display:none" id="targetform"><input name="data" type="hidden" id="targetinput"></form>
+
+<script>
+var param = '<%-param%>';
+param = param.substr(1);
+param = param.substr(0,param.length-1);
+var arr = param.split('","');
+//console.log(arr);
+
+var html = '';
+
+var divstart = '<div><input class="target" value="';
+var divend = '"><button onclick="removeTarget(this)">Delete</button></div>';
+
+for(var i=0;i<arr.length;i++){
+	html += divstart+arr[i]+divend;
+}
+
+function addTarget(){
+	var div = document.createElement('div');
+		var input = document.createElement('input');
+		input.className = 'target';
+		div.appendChild(input);
+
+		var btn = document.createElement('button');
+		btn.setAttribute('onclick','removeTarget(this)');
+		btn.innerHTML = 'Delete';
+		div.appendChild(btn);
+
+	document.getElementById('c').appendChild(div);
+	input.focus();
+}
+function removeTarget(o){
+	var p = o.parentNode;
+	p.parentNode.removeChild(p);
+}
+function saveTargets(){
+	var t = document.getElementsByClassName('target');
+
+	var values = [];
+
+	for(var i=0;i<t.length;i++){
+		values.push(t[i].value);
+	}
+	var str = '"'+values.join('","')+'"';
+
+	document.getElementById('targetinput').value = str;
+	document.getElementById('targetform').submit();
+}
+
+document.getElementById('c').innerHTML = html;
+</script>

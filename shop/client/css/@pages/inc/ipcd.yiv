@@ -1,0 +1,8 @@
+.ig-index-page__container{padding:75px 0 25px}
+.ig-index-page__container h2{margin:0;padding:0 0 10px;}
+.ig-index-page__container p{max-height:40vh;overflow:hidden;margin:0;text-align:justify;}
+
+.ig-index-page__cd__end{background-image: -webkit-linear-gradient(left,rgba(255,255,255,0),rgba(255,255,255,1));background: linear-gradient(to bottom,rgba(255,255,255,0),rgba(255,255,255,1));position: absolute;height:100px;width:100%;left:0;bottom:0;}
+.ig-index-page__cd__link{text-align:right;position:absolute;right:15px;bottom:-18px}
+.ig-index-page__cd__link a{font-size:16px;text-decoration:none;background:#fff}
+.ig-index-page__cd__link a:hover{text-decoration:underline;}

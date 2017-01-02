@@ -1,0 +1,5 @@
+.sip__title{margin-bottom:30px}
+.sip__fpass{padding-bottom:20px;}
+.sip__fpass a{font-size:16px;text-decoration:none;}
+.sip__fpass a:hover{text-decoration:underline}
+.ig-btn--sign{margin-top:30px;}

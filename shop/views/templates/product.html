@@ -1,0 +1,19 @@
+<div id="preheader" class="ig-preheader ig-primary">
+	<div class="container">
+		<div class="pp__top">
+			<div class="pp__top__left">
+				<div class="pp__icon ig-sh2">
+					<img src="/uploads/product/<?=scope.product.furl?>/<?=scope.product.imgs[0]?>" alt="">
+					<span></span>
+				</div>
+				<h6 class="pp__top__left__renew"><?=scope.productDate(scope.product.ts)?></h5>
+			</div>
+			<div class="pp__top__right">
+				<h4><?=scope.product.name?></h4>
+				<h5><?=scope.T[scope.product.category]?></h5>
+				<button class="pp__price ig-btn ig-btn--seconry" data-igload="igripple"><?=scope.T['Buyfor']?>&nbsp;&nbsp;<?=scope.product.price?>.00 UAH</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container"></div>

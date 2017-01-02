@@ -1,0 +1,3 @@
+function digitToBasic(digit,flag){
+	return digit + 22 + 75 * (digit < 26) - ((flag != 0) << 5);
+}

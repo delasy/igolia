@@ -1,0 +1,11 @@
+.index_progress{background:#fff;margin-bottom:-80px}
+.index_progress .this_icon>img{width:90%;padding:4%;}
+.index_progress div>h1{color:#bda180;font-weight:300;font-size:30px;text-align:left;}
+
+@media (max-width:991px){
+.index_progress div>h1{font-size:20px;}
+}
+@media (max-width:575px){
+.index_progress div>h1{text-align:center;}
+.index_progress .this_icon{margin-bottom:30px}
+}

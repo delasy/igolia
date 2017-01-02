@@ -1,0 +1,44 @@
+if(d.getElementById('ipmcVIY')){
+	ithis[ajax_get]('/api/categories/images',{},(data)=>{
+		try{
+			var json = JSON.parse(data);
+		}catch(e){console.error(e)}
+
+		d.getElementById('ipmcVIY').innerHTML = '';
+		d.getElementById('ipmcVIY').className = 'container';
+		d.getElementById('ipmcVIY').parentNode.className = 'ig-seconry ig-index-page__container';
+
+		var ipmc = ithis[createNode]('div',{
+			className:'row',
+			id:'ipmc'
+		});
+
+		d.getElementById('ipmcVIY').appendChild(ipmc);
+		d.getElementById('ipmc').innerHTML = '';
+
+		ithis[reverseObject](json,function(k){
+			var v = json[k];
+
+			var around = d.createElement('a');
+			around.href = '/category/'+k.toLowerCase();
+			around.className = 'ipmc-link col-lg-3 col-md-4 col-sm-6 col-12';
+
+				var catbox = d.createElement('div');
+				catbox.className = 'ipmc-box';
+
+					var s = d.createElement('div');
+					s.className = 'ipmc-box-image';
+					s.innerHTML = '<img src="'+v+'" alt="">';
+
+					catbox.appendChild(s);
+
+					var s = d.createElement('h6');
+					s.className = 'ipmc-box-text ig-seconry__text';
+					s.innerHTML = T[k];
+
+					catbox.appendChild(s);
+				around.appendChild(catbox);
+			d.getElementById('ipmc').appendChild(around);
+		});
+	});
+}

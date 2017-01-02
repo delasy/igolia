@@ -1,0 +1,7 @@
+.container--order_site{margin-bottom:-80px}
+.container-last--order_site{margin-bottom:0}
+
+.submit_order_site{margin-top:40px;}
+.error_order_site{font-size:16px;color:#ed3b3b;font-weight:300;display:block;margin-top:-20px;margin-bottom:25px;}
+
+#tp_target{display:block;border:2px dotted #bda180;padding:20px 0;margin-top:15px;}

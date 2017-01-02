@@ -1,0 +1,9 @@
+<style>
+body{}
+</style>
+<script>
+function pass(a){
+	document.getElementById("data2").value += a;
+}
+function v(a){return document.getElementById(a);}
+</script>

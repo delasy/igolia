@@ -1,0 +1,45 @@
+*,html{font-size:0;padding:0;margin:0;text-align:center;font-family:-apple-system,BlinkMacSystemFont,Roboto,Open Sans,Helvetica Neue,sans-serif;}
+body,html{width:100%;height:100%;position:relative;}
+
+h1{font-size:16px;font-weight:700;margin:0 0 7px;}
+h2{font-size:13px;font-weight:normal;}
+
+.oldbrowser{display:table;width:100%;height:100%;background:#eee}
+.inner{display:table-cell;vertical-align:middle;width:auto;height:auto;position:relative;}
+.inner_div{display:inline-block;box-shadow:0 1px 0 0 #d7d8db,0 0 0 1px #e3e4e8;border-radius:2px;background:#fff;}
+
+.header{text-align:left;background:#bda180;height:54px;border-radius:2px 2px 0 0;}
+.header_image{height:40px;margin:6px 12px;}
+
+.content{padding:35px 20px 35px;}
+
+.good_browsers{padding:40px 20px 0;}
+
+
+.good_browser{display:inline-block;padding:20px 20px 15px;margin:0 10px;border-radius:2px;text-decoration:none;}
+.good_browser:hover{background-color:#f0f2f5;}
+
+.browser_icon {
+    height: 80px;
+    width: 80px;
+    background: url(/include/img/other/oldbrowser_browsers.png) no-repeat 0 0;
+    margin-bottom: 10px;
+}
+
+.browser_icon.yandex {
+    background-position: 0 -334px;
+}
+.browser_icon.chrome {
+    background-position: 0 -165px;
+}
+.browser_icon.opera {
+    background-position: 0 -249px;
+}
+.browser_icon.firefox {
+    background-position: 0 -83px;
+}
+
+.browser_name{text-decoration:none;color:#000;font-weight:500;
+-webkit-font-smoothing: subpixel-antialiased;
+-moz-osx-font-smoothing: auto;
+font-size: 14px;}

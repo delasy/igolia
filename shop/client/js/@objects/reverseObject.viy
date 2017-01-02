@@ -1,0 +1,9 @@
+function(obj,f){
+	var arr = [];
+	for(var key in obj){
+		arr.push(key);
+	}
+	for(var i=0;i<arr.length;i++){
+		f.call(obj,arr[i]);
+	}
+}

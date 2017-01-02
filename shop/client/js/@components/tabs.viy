@@ -1,0 +1,33 @@
+function(el,autoload){
+	if(!autoload)return console.error('Method can be accesed only as autoload');
+	if(!el)return console.error('Element should be present');
+
+	if(!ithis[hasClass](el,'ig-tabs'))return console.error('Specify right className for your tabs container');
+
+	var cb = el.hasAttribute('data-cb')&&typeof w[el.getAttribute('data-cb')] === 'function'?w[el.getAttribute('data-cb')]:false;
+
+	var line = d.createElement('div');
+	line.className = 'ig-tab__line';
+
+	el.appendChild(line);
+
+	var items = el.getElementsByClassName('ig-tab');
+
+	for(var i=0;i<items.length;i++){
+		var item = items[i];
+
+		item.addEventListener('click',function(){
+			var di = this.i;
+			var ditem = this.item;
+			line.style.marginLeft = di*160 + 'px';
+
+			for(var i=0;i<items.length;i++){
+				ithis[removeClass](items[i],'ig-tab--selected');
+			};
+
+			ithis[addClass](ditem,'ig-tab--selected');
+
+			if(cb)cb(ditem.getAttribute('data-value'));
+		}.bind({i:i,item:item}));
+	}
+}

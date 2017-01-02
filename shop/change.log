@@ -1,0 +1,49 @@
++ No sequelize, only pg
++ Make signin & signup work
++ Make inputs autodetect of fill up in sign in page
+
+-- Admin panel
++/async func for check furl exist
++ staff to add new products
++ admin/settgins/recommendations
++ admin get/delete products
+- admin edit products
+- users functionallity
+
+- random string styles for each element
+- search page functionality
+---------------- code an normal stable system
+- when user quit web app alert "Quit site, yeat?" enter your email for newsfeed
+- rename all classes buttons on web site, like button-transparent button-color button-color-second
+- rename all hover classes buttons, like button-transparent:hover button-color:hover button-color-second:hover
+- select for language
+- select for currency
+- pagination on category list
+- filters in search
+- filters in category list
+- filters anywhere in need
+- category page view, subcategory view
+- product view change alias to /p/
+- functionality for buy product (cart,pay method,last payments)
+- functionality for profile
+- main page view
+- page about us
+- page privacy
+- page tos
+- page cookies
+- page if cannot set cookie\not working javascript
+- page old browsers
+- next for inputs in mobile
+- make file with langueage (not load from backend)
+- whole site to material design
+- adforce.ru
+- Create arrow bottom in left drawer and popup for account credentials and sign out
+- all modules to node_modules
+- all node_modules delete readme etc
+
++ checkAutofill for @components/input js
+
+
+//feedback in future
+
+//buttons,flat buttons,badges,grid,textfields,checkbox,switch,spinner,typography,tooltip,snackbar,menu,chips,slider,select,list,toolbar,tabs,table,drawer,dialog

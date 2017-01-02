@@ -1,0 +1,264 @@
+/*!
+*
+*
+* Plugin: igoliaCW
+* Web site: http://www.igolia.tk/
+* Version: 1.0
+*
+* Author: delasy
+*
+* Copyright 2015 - 2017
+*
+* Date: 2017-02-01T23:36Z
+*
+*
+* Usage:
+*    <div id="c" data-phones-prefix="+38" *data-color="red"* data-phones="0123456789,9876543210"></div>
+*    <script src="http://www.igolia.com/cdn/CW?id=c"></script>
+*
+*
+*/
+var fid = '<?=$_GET[]?>';
+var ext_div_id = '',this_nameCW = 'igoliaCW';
+
+var postfixCW = 'external';
+
+
+for(var i=0;i<5;i++)ext_div_id += '0123456789'.charAt(Math.floor(Math.random() * '0123456789'.length));
+var arrayCW = [0,1];
+if(arrayCW[Math.floor(Math.random()*arrayCW.length)] === 1){
+	var ext_div_id = ext_div_id + '_' + this_nameCW;
+}else{
+	var ext_div_id = this_nameCW + '_' + ext_div_id;
+}
+
+Element.prototype.igoliaCW = function(){
+	var that = this;
+
+	var phones_prefix = that.getAttribute('data-phones-prefix');
+	var phones = that.getAttribute('data-phones');
+
+	if(!phones_prefix||!phones||!that.id||!ext_div_id)return false;
+
+	var pel = that.parentNode;
+
+	that.style.setProperty('position','fixed','important');
+	that.style.setProperty('bottom','20px','important');
+	that.style.setProperty('right','20px','important');
+	that.style.setProperty('width','100px','important');
+	that.style.setProperty('height','100px','important');
+	that.style.setProperty('background','rgba(0,0,0,.1)','important');
+	that.style.setProperty('z-index','2147483646','important');
+	that.style.setProperty('display','block','important');
+	that.style.setProperty('border-radius','50%','important');
+	that.style.setProperty('overflow','hidden','important');
+	that.style.setProperty('cursor','pointer','important');
+	that.style.setProperty('margin','0','important');
+	that.style.setProperty('padding','0','important');
+
+	that.onclick=function(){
+		document.getElementById(ext_div_id).igoliaCWanimate({target:'right',from:-320,to:0,type:'px'},500);
+		that.igoliaCWanimate({target:'right',from:20,to:-120,type:'px'},500);
+
+		document.body.scroll = 'no';
+		document.documentElement.style.overflow = 'hidden';
+	}
+
+
+
+	var child_div = document.createElement('div');
+
+	var html_CW = '';
+	html_CW += '<style>@keyframes igoliaCW{45%{transform:rotate(0);}47%{transform:rotate(16deg);}53%{transform:rotate(-16deg);}55%{transform:rotate(0);}}</style>';
+	html_CW += '<svg style="padding:0!important;height:50px;width:50px;margin:15px;overflow:visible;" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="17.544px" height="25.215px" viewBox="0 0 17.544 25.215"><path style="margin:0!important;padding:0!important;animation:igoliaCW 5s infinite;transform-origin: 50% 50%;" fill="#fff" d="M12.22,6.784c-0.135,0.871-1.654,4.073-2.084,4.89c-0.576,1.087-2.779,4.344-3.724,5.065l0,0l-0.775,0.532l-1.879-0.616L0,20.653l0.129,1.043l2.123,2.832l0.916,0.687c0,0,13.474-8.596,14.376-24.03c0,0-0.266-0.297-0.777-0.87L13.228,0l-1.16,0.454l-1.029,4.941l1.127,1.23"></path></svg>';
+
+	child_div.innerHTML = html_CW;
+
+	if( !that.getAttribute('data-color') ){
+		child_div.style.setProperty('background','rgba(189,161,128,.8)','important');
+	}else{
+		child_div.style.background = that.getAttribute('data-color');
+	}
+
+	child_div.style.setProperty('position','relative','important');
+	child_div.style.setProperty('margin','10px','important');
+	child_div.style.setProperty('padding','0','important');
+	child_div.style.setProperty('width','80px','important');
+	child_div.style.setProperty('height','80px','important');
+	child_div.style.setProperty('border-radius','50%','important');
+
+
+	that.appendChild(child_div);
+
+	that.removeAttribute('data-phones-prefix');
+	that.removeAttribute('data-phones');
+	that.removeAttribute('id');
+
+	var ext_div = document.createElement('div');
+	ext_div.id = ext_div_id;
+
+	ext_div.style.setProperty('position','fixed','important');
+	ext_div.style.setProperty('top','0','important');
+	ext_div.style.setProperty('right','-320px','important');
+	ext_div.style.setProperty('height','100%','important');
+	ext_div.style.setProperty('width','318px','important');
+	ext_div.style.setProperty('z-index','2147483647','important');
+	ext_div.style.setProperty('border-left','2px solid #666','important');
+	ext_div.style.setProperty('padding','0','important');
+	ext_div.style.setProperty('margin','0','important');
+
+	var ext_div_a = document.createElement('a');
+	ext_div_a.innerHTML = '&times';
+
+	ext_div_a.style.setProperty('position','absolute','important');
+	ext_div_a.style.setProperty('top','0','important');
+	ext_div_a.style.setProperty('right','0','important');
+	ext_div_a.style.setProperty('height','40px','important');
+	ext_div_a.style.setProperty('width','40px','important');
+	ext_div_a.style.setProperty('text-align','center','important');
+	ext_div_a.style.setProperty('z-index','2147483647','important');
+	ext_div_a.style.setProperty('line-height','35px','important');
+	ext_div_a.style.setProperty('font-size','40px','important');
+	ext_div_a.style.setProperty('color','#fff','important');
+	ext_div_a.style.setProperty('font-weight','300','important');
+	ext_div_a.style.setProperty('display','block','important');
+	ext_div_a.style.setProperty('opacity','1','important');
+	ext_div_a.style.setProperty('cursor','pointer','important');
+	ext_div_a.style.setProperty('margin','0','important');
+	ext_div_a.style.setProperty('padding','0','important');
+
+	ext_div_a.onclick = function(){
+		document.getElementById(ext_div_id).igoliaCWanimate({target:'right',from:0,to:-320,type:'px'},500);
+		that.igoliaCWanimate({target:'right',from:-120,to:20,type:'px'},500);
+
+		document.documentElement.style.overflow = 'auto';
+		document.body.scroll = 'yes';
+	};
+
+	ext_div.appendChild(ext_div_a);
+
+	var ext_div_h1 = document.createElement('h1');
+
+	ext_div_h1.style.setProperty('background','#666','important');
+	ext_div_h1.style.setProperty('color','#fff','important');
+	ext_div_h1.style.setProperty('display','block','important');
+	ext_div_h1.style.setProperty('font-weight','300','important');
+	ext_div_h1.style.setProperty('height','40px','important');
+	ext_div_h1.style.setProperty('line-height','40px','important');
+	ext_div_h1.style.setProperty('margin','0','important');
+	ext_div_h1.style.setProperty('text-align','center','important');
+	ext_div_h1.style.setProperty('font-size','26px','important');
+	ext_div_h1.style.setProperty('padding','0','important');
+
+	ext_div_h1.innerHTML = '���������';
+
+	ext_div.appendChild(ext_div_h1);
+
+	if(phones.indexOf(',') > 0){
+		phones = phones.split(',');
+	}else{
+		phones = [phones];
+	}
+
+	for(var i=0;i<phones.length;i++){
+		var phone = phones[i];
+		if(phone==='')continue;
+		var sphone = phones_prefix+phone;
+
+		var new_a = document.createElement('a');
+		new_a.href = 'tel:'+sphone;
+		new_a.innerHTML = sphone;
+
+		new_a.style.setProperty('font-size','24px','important');
+		new_a.style.setProperty('display','block','important');
+		new_a.style.setProperty('text-align','center','important');
+		new_a.style.setProperty('line-height','24px','important');
+		new_a.style.setProperty('color','#fff','important');
+		new_a.style.setProperty('margin','10px 0','important');
+		new_a.style.setProperty('padding','0','important');
+
+		ext_div.appendChild(new_a);
+	}
+
+	if( !that.getAttribute('data-color') ){
+		ext_div.style.setProperty('background','rgba(189,161,128,.8)','important');
+	}else{
+		ext_div.style.background = that.getAttribute('data-color');
+		that.removeAttribute('data-color');
+	}
+
+	igoliaCWajax('https://'+'raw.githubusercontent.com/delasy/footer/master/index.html',function(data){
+		var new_div = document.createElement('div');
+
+		var o = 'auto';
+
+		new_div.innerHTML = '<style>#'+ext_div_id+' [site_developer]{margin:0!important;padding:0!important;position:absolute!important;bottom:0!important;left:0!important;top:auto!important;right:auto!important;color:#fff!important;text-align:center!important;width:100%!important;}#'+ext_div_id+' [site_developer]>a{position:relative!important;margin:0!important;padding:0!important;color:#fff!important;text-align:center!important;width:'+o+'!important;}</style>'+data;
+
+		ext_div.appendChild(new_div);
+
+		pel.insertBefore(ext_div,that);
+	});
+
+	that.id = ext_div_id+postfixCW;
+}
+
+function igoliaCWajax(url,callback){
+	if(window.XMLHttpRequest)var x = new XMLHttpRequest();
+	else var x = new ActiveXObject("Microsoft.XMLHTTP");
+
+	x.open('GET',url,true);
+	x.onreadystatechange = function(){
+		if(x.readyState == 4 && typeof callback === 'function')callback(x.responseText);
+	};
+
+	x.send();
+}
+var igoliaCWanimate_a;
+Element.prototype.igoliaCWanimate = function(obj,duration){
+	var start = new Date().getTime(),that = this;
+
+	var igoliaCWanimate_a = window.setInterval(function(){
+		var now = new Date().getTime() - start;
+		var progress = now / duration;
+
+		if(obj['from'] < obj['to']){
+			var result = (obj['to'] - obj['from']) * progress + obj['from'];
+
+			if(result > obj['to']){
+				result = obj['to'];
+				clearInterval(igoliaCWanimate_a);
+			}
+		}else{
+			var result = ( (obj['to'] - obj['from']) ) * progress + obj['from'];
+
+			if(result < obj['to']){
+				result = obj['to'];
+				clearInterval(igoliaCWanimate_a);
+			}
+		}
+		if(obj['notstyle']){
+			that[ obj['target'] ] = result + obj['type'];
+		}else{
+			that.style[ obj['target'] ] = result + obj['type'];
+		}
+	},12);
+
+	return igoliaCWanimate_a;
+};
+
+document.addEventListener('DOMContentLoaded',function(){
+	document.getElementById(fid).igoliaCW();
+},false);
+
+
+window.addEventListener("scroll",function(){
+	var current = document.documentElement.scrollTop || document.body.scrollTop;
+	var max = Math.max(document.body.scrollHeight,document.body.offsetHeight,document.documentElement.clientHeight,document.documentElement.scrollHeight,document.documentElement.offsetHeight )-window.innerHeight*2;
+
+	if(current > max && document.getElementById(ext_div_id+postfixCW) && !document.getElementById(ext_div_id+postfixCW).style.top){
+		document.getElementById(ext_div_id+postfixCW).igoliaCWanimate({target:'top',from:0,to:20,type:'px'},500);
+	}else if(current < max && (document.getElementById(ext_div_id+postfixCW)&&document.getElementById(ext_div_id+postfixCW).style.top && document.getElementById(ext_div_id+postfixCW).style.top==='20px') ){
+		document.getElementById(ext_div_id+postfixCW).style.top = '';
+		document.getElementById(ext_div_id+postfixCW).igoliaCWanimate({target:'bottom',from:0,to:20,type:'px'},500);
+	}
+},false);

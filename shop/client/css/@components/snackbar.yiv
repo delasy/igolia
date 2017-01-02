@@ -1,0 +1,14 @@
+/* snackbar */
+.ig-error{position:fixed;bottom:5px;left:10px;cursor:default;z-index:9999;}
+.ig-error__bubble{display:block;color:rgba(255,255,255,.8);width:300px;border-radius:2px;background-color:#323232;transform:translate(0,150%);padding:14px 12px 14px 24px;font-size:14px;font-weight:normal;transition:transform .25s cubic-bezier(0,0,.2,1);margin:5px 0;}
+.ig-error__bubble.ig-error__bubble--visible{transform:translate(0,0);}
+.ig-error__bubble.ig-error__bubble--wb{padding-right:112px;}
+
+.ig-error__bubble .ig-btn{position:absolute!important;right:12px;top:50%;margin-top:-18px;max-width:100px}
+
+.ig-error__bubble a{color:var(--ig-primary);font-size:initial;text-decoration:none}
+.ig-error__bubble a:hover{text-decoration:underline}
+@media (max-width:460px){
+.ig-error{bottom:-5px;left:0;width:100%;}
+.ig-error__bubble{width:100%;border-radius:0;}
+}

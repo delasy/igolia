@@ -1,0 +1,133 @@
+function(el,autoload){
+	if(!el)return console.error('Specify element for select method');
+	var pel=el.parentNode,rn,div=pel,sval,input = el;
+
+	if(!autoload)return console.error('IG select cannot be executed from non autoload method.');
+
+	var cb = el.hasAttribute('data-cb')&&typeof w[el.getAttribute('data-cb')] === 'function' ?w[el.getAttribute('data-cb')]:false;
+
+	if(autoload){
+		var options = el.options;
+
+		div = d.createElement('div');
+		div.className = 'ig-select';
+
+		var selected = d.createElement('span');
+		selected.className = 'ig-select__selected';
+
+		var items = d.createElement('ul');
+		items.className = 'ig-select__items';
+
+		for(var key in options)if(options.hasOwnProperty(key)){
+			var option = options[key];
+
+			var item = d.createElement('li');/*new option*/
+			item.className = 'ig-select__item';
+
+			if(option.selected&& !selected.innerHTML){
+				selected.innerHTML = option.text;
+				sval = option.value;
+
+				item.className += ' ig-select__item--selected';
+			}
+
+			
+			item.innerHTML = option.text;
+			item.setAttribute('data-value',option.value);
+
+			if(option.disabled){
+				item.setAttribute('data-disabled','true');
+				
+				item.addEventListener('click',function(e){
+					e.stopPropagation();
+					e.preventDefault();
+					return false;
+				});
+			}else{
+				item.addEventListener('click',function(e){
+					var text = this.innerHTML;
+					var val = this.getAttribute('data-value');
+					
+					rn.value(text,val);
+
+					
+
+					
+					var ts = this.parentNode.getElementsByClassName('ig-select__item--selected');
+
+					if(ts[0])ithis[removeClass](ts[0],'ig-select__item--selected');
+
+					ithis[addClass](this,'ig-select__item--selected');
+				});
+			}
+
+			items.appendChild(item);
+		}
+
+		var input = d.createElement('input');
+		input.type = 'hidden';
+		input.name = el.name;
+		input.value = sval.toString();
+		input.id = el.id ? el.id : el.name;
+
+		div.appendChild(selected);
+		div.appendChild(items);
+		div.appendChild(input);
+
+		div.addEventListener('click',function(e){
+			if(e.target === div || e.target === selected){
+				var o = ithis[offset](div);
+
+				var o = ithis[offset](div),b = d.body,h = d.dElement;
+				var height = Math.max(b.scrollHeight,b.offsetHeight,h.clientHeight,h.scrollHeight,h.offsetHeight);
+
+				var PY = w.innerHeight - e.clientY;
+				var PE = items.offsetHeight;
+
+				items.style.marginTop = '';
+
+				if(PE > PY){
+					items.style.marginTop = PY-PE +'px';
+				}
+
+				if( o.top + w.innerHeight > height){
+					/*w.scrollTo(0, o.top - (w.innerHeight*90/100) );*/
+					ithis[addClass](div,'ig-select--top');
+				}else{
+					/*w.scrollTo(0, o.top - (w.innerHeight*5/100) );*/
+				}
+				
+				ithis[addClass](div,'ig-select--expanded');
+			}
+		});
+
+		d.addEventListener('click',function(e){
+			if(e.target !== div && e.target !== items && e.target !== selected){
+				ithis[removeClass](div,'ig-select--top');
+				ithis[removeClass](div,'ig-select--expanded');
+			}
+		});
+		d.addEventListener('keyup',function(e){
+			if(e.which === 27){
+				ithis[removeClass](div,'ig-select--top');
+				ithis[removeClass](div,'ig-select--expanded');
+			}
+		});
+
+		pel.insertBefore(div,el);
+		pel.removeChild(el);
+	}
+
+	rn={
+		value:function(text,val){
+			input.val = val;
+			selected.innerHTML = text;
+
+			if(cb){
+				cb(val,text);
+			}
+		}
+	};
+
+	return rn;
+}

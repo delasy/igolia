@@ -1,0 +1,25 @@
+/* range */
+.ig-range{display:flex;background:transparent;height:18px;position:relative;flex-direction:row;padding:0 20px;}
+.ig-range--vertical{transform:rotate(270deg);}
+.ig-range__input{width:100%;-webkit-appearance:none;height:2px;background:transparent;user-select:none;outline:0;padding:0;align-self:center;z-index:1;cursor:pointer;border:0;-webkit-tap-highlight-color:rgba(255,255,255,0);}
+
+.ig-range__input::-webkit-slider-thumb{-webkit-appearance:none;margin-top:-6px;border:3px solid var(--ig-primary);background:var(--ig-primary);height:14px;width:14px;border-radius:50%;cursor:pointer;transition:transform 85ms ease-in;}
+.ig-range__input::-moz-range-thumb{border:3px solid var(--ig-primary);background:var(--ig-primary);height:14px;width:14px;border-radius:50%;cursor:pointer;transition:transform 85ms ease-in;}
+.ig-range__input::-ms-thumb{border:3px solid var(--ig-primary);background:var(--ig-primary);height:14px;width:14px;border-radius:50%;cursor:pointer;transition:transform 85ms ease-in;}
+
+.ig-range__input:active::-webkit-slider-thumb{transform:scale(1.3)}
+.ig-range__input:active::-moz-range-thumb{transform:scale(1.3)}
+.ig-range__input:active::-ms-thumb{transform:scale(1.3)}
+
+
+.ig-range__input::-webkit-slider-runnable-track{width:100%;height:2px;cursor:pointer;background:transparent;}
+.ig-range__input::-moz-range-track{width:100%;height:2px;cursor:pointer;background:transparent;}
+.ig-range__input::-ms-track{width:100%;height:2px;cursor:pointer;background:transparent;border-color:transparent;color:transparent;}
+
+.ig-range__bg{position:absolute;left:20px;top:0;bottom:0;right:20px;}
+.ig-range__bgl{position:absolute;left:0;top:8px;height:2px;background:var(--ig-primary);}
+.ig-range__bgr{position:absolute;right:0;top:8px;height:2px;background:rgba(0,0,0,.26);}
+
+.ig-range--min .ig-range__input::-webkit-slider-thumb{border-color:rgba(0,0,0,.26);background:#fff;}
+.ig-range--min .ig-range__input::-moz-range-thumb{border-color:rgba(0,0,0,.26);background:#fff;}
+.ig-range--min .ig-range__input::-ms-thumb{border-color:rgba(0,0,0,.26);background:#fff;}

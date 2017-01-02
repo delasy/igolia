@@ -1,0 +1,49 @@
+function(el){
+	el.addEventListener('mousedown',function(e){
+		var t = this;
+
+		var o = ithis[offset](t);
+		var left = e.pageX - o.left;
+		var top = e.pageY - o.top;
+
+		var from,to,styles = '--ig-ripple-left:'+left+'px;--ig-ripple-top:'+top+'px;';
+		var timelimit = 250,endtime = +new Date()+timelimit, increaser = 2.5, decreaser = .5;
+
+		if(t.offsetWidth > t.offsetHeight){
+			from = t.offsetHeight * decreaser;
+			to = t.offsetWidth * increaser;
+		}else{
+			from = t.offsetWidth * decreaser;
+			to = t.offsetHeight * increaser;
+		}
+
+		t.setAttribute('style',styles+'--ig-ripple-brg:'+from+'px;'+'--ig-ripple-rg:'+to+'px;');
+
+		if(ithis[hasClass](t,'ig-ripple--now'))return;
+		ithis[addClass](t,'ig-ripple--now');
+
+		t.setAttribute('data-mousedown','true');
+
+		w.setTimeout(function(){
+			if(t.href){
+				w.location.href = t.href;
+			}
+
+			if(t.hasAttribute('data-mousedown')){
+				t.removeAttribute('data-mousedown');
+			}else{
+				ithis[removeClass](t,'ig-ripple--now');
+				/*t.removeAttribute('style');*/
+			}
+		},400);
+	});
+	el.addEventListener('mouseup',function(e){
+		var t = this;
+
+		if(t.hasAttribute('data-mousedown')){
+			t.removeAttribute('data-mousedown');
+		}else{
+			ithis[removeClass](t,'ig-ripple--now');
+		}
+	});
+}

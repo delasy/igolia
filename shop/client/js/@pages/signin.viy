@@ -1,0 +1,49 @@
+if(d.getElementById('signin_form')){
+	d.getElementById('signin_form').addEventListener('submit',function h(e){
+		e.stopPropagation();e.preventDefault();
+
+		var btn = d.getElementById('signin_form_btn');
+		if(!btn)return ithis[log]();
+		btn.disabled = true;
+
+		var silogin = d.getElementById('silogin');
+		if(!silogin|| !(silogin instanceof HTMLInputElement) )return ithis[log]();
+		silogin = silogin.value;
+		var sipass = d.getElementById('sipass');
+		if(!sipass|| !(sipass instanceof HTMLInputElement) )return ithis[log]();
+		sipass = sipass.value;
+		
+		var Obj = {
+			silogin:silogin,
+			sipass:sipass,
+			recaptcha:grecaptcha.getResponse(w.recaptchawidget)
+		};
+		
+		ithis[pageLoader](true);
+
+		ithis[ajax_post]('/api/signin',Obj,function(data){
+			try{
+				var json = JSON.parse(data);
+			}catch(e){console.error(e);ithis[log]();}
+
+			if(!json.hasOwnProperty('success')){
+				for(var key in json)if(json.hasOwnProperty(key)){
+					ithis[components][input](document.getElementById(key)).error(json[key]);
+				}
+				ithis[pageLoader](false);
+				btn.disabled = false;
+				
+				grecaptcha.reset(w.recaptchawidget);
+			}else{
+				var input = ithis[createNode]('input',{name:'setcookie',value:'true'});
+
+				d.getElementById('signin_form').appendChild(input);
+				d.getElementById('signin_form').method = 'POST';
+				d.getElementById('signin_form').action = '/api/signin';
+				d.getElementById('signin_form').removeEventListener('click',h);
+				d.getElementById('signin_form').submit();
+			}
+		});
+		return false;
+	});
+}

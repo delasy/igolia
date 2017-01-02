@@ -1,0 +1,101 @@
+/*data-igload="igrange"/data-cb/vertical/step/data-value/min/max/id/name/type/disabled*/
+function(el,autoload){
+	if(!el)return;
+
+	var pel = el.parentNode;
+	var input = el,div = pel,rn,pl,pr;
+	var min = +el.min ? +el.min : 0;
+	var max = +el.max ? +el.max : 100;
+	var val = (+el.value < min) ? min : (+el.value);
+	var id = el.id ? el.id : el.name;
+	var vert = el.hasAttribute('data-vertical')&&el.getAttribute('data-vertical')==='true'?' ig-range--vertical':'';
+
+	if(autoload){
+		var cb = (el.hasAttribute('data-cb')&&typeof w[el.getAttribute('data-cb')]==='function') ? w[el.getAttribute('data-cb')]:false;
+		div = d.createElement('div');
+		input = d.createElement('input');
+
+		div.className = 'ig-range'+vert;
+
+		input.className = 'ig-range__input';
+		input.type = el.type;
+		input.min = min;
+		input.max = max;
+		input.value = val.toString();
+		input.step = el.step;
+		input.step = el.step;
+		input.id = id;
+
+		var bg = d.createElement('div');/*progress's parent*/
+		pl = d.createElement('div');/*progress left*/
+		pr = d.createElement('div');/*progress right*/
+
+		bg.className = 'ig-range__bg';
+		pl.className = 'ig-range__bgl';
+		pr.className = 'ig-range__bgr';
+
+		var nmax = max - min;
+		var nval = (val - min) > 0 ? (val - min) : 0;
+
+		var p = nval*100/nmax;
+
+		if(p === 0){
+			div.className += ' ig-range--min';
+		}
+
+		pl.style.width = p+'%';
+		pr.style.width = (100-p)+'%';
+
+		bg.appendChild(pl);
+		bg.appendChild(pr);
+
+		div.appendChild(input);
+		div.appendChild(bg);
+
+		pel.insertBefore(div,el);
+		pel.removeChild(el);
+
+		input.addEventListener('input',function(){
+			val = (+this.value < min) ? min : (+this.value);
+
+			var nmax = max - min;
+			var nval = (val - min) > 0 ? (val - min) : 0;
+
+			var p = nval*100/nmax;
+
+			pl.style.width = p+'%';
+			pr.style.width = (100-p)+'%';
+
+			if(p === 0)ithis[addClass](div,'ig-range--min');
+			else ithis[removeClass](div,'ig-range--min');
+
+			if(cb)cb(this.value);
+		});
+	}else{
+		pl = div.getElementsByClassName('ig-range__bgl')[0];
+		pr = div.getElementsByClassName('ig-range__bgr')[0];
+	}
+
+	rn = {
+		value:(val)=>{
+			if(typeof val !== 'number')return console.error('Specify data in params type of integer');
+
+			var nmax = max - min;
+			var nval = (val - min) > 0 ? (val - min) : 0;
+
+			var p = nval*100/nmax;
+
+			pl.style.width = p+'%';
+			pr.style.width = (100-p)+'%';
+
+			if(p === 0)ithis[addClass](div,'ig-range--min');
+			else ithis[removeClass](div,'ig-range--min');
+
+			input.value = val.toString();
+
+			return;
+		},
+	};
+
+	return rn;
+}

@@ -1,0 +1,14 @@
+/* text fields */
+.ig-textfield{position:relative;display:inline-block;width:100%;padding:20px 0;}
+.ig-textfield__input{border:0;border-bottom:1px solid rgba(0,0,0,.12);display:block;font-size:16px;padding:4px 0;width:100%;min-width:100%;max-width:100%;background:transparent;text-align:left;color:rgb(117,117,117);outline:0;text-overflow:ellipsis;}
+.ig-textfield__label{transition:all .2s cubic-bezier(.4,0,.2,1);bottom:0;color:rgba(0,0,0,.26);font-size:16px;left:0;pointer-events:none;position:absolute;display:block;top:24px;width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;text-align:left;}
+.ig-textfield__label:after{content:'';background-color:var(--ig-primary);bottom:20px;height:2px;left:45%;position:absolute;transition:all .2s cubic-bezier(.4,0,.2,1);visibility:hidden;width:10px;}
+.ig-textfield__error{color:#d50000;position:absolute;font-size:12px;margin-top:3px;visibility:hidden;display:block;}
+.ig-textfield.ig-textfield--focus .ig-textfield__label,.ig-textfield.ig-textfield--html .ig-textfield__label{color:var(--ig-primary);font-size:12px;top:4px}
+.ig-textfield.ig-textfield--focus .ig-textfield__label:after{left:0;visibility:visible;width:100%;}
+
+.ig-textfield.ig-textfield--error .ig-textfield__input{border-color:#d50000}
+.ig-textfield.ig-textfield--error .ig-textfield__label{color:#d50000}
+.ig-textfield.ig-textfield--error .ig-textfield__label:after{background-color:#d50000}
+.ig-textfield.ig-textfield--error .ig-textfield__error{visibility:visible}
+.ig-textfield--disabled{opacity:.4}

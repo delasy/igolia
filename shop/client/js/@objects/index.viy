@@ -1,0 +1,15 @@
+ithis[getCookie] = <? include getCookie.viy ?>;
+ithis[getLang] = <? include getLang.viy ?>;ithis[getLang]();
+ithis[reverseObject] = <? include reverseObject.viy ?>;
+ithis[offset] = <? include offset.viy ?>;
+ithis[randstr] = <? include randstr.viy ?>;
+ithis[hasClass] = <? include hasClass.viy ?>;
+ithis[removeClass] = <? include removeClass.viy ?>;
+ithis[addClass] = <? include addClass.viy ?>;
+ithis[removeOptions] = <? include removeOptions.viy ?>;
+ithis[dcl] = <? include dcl.viy ?>;
+ithis[createNode] = <? include createNode.viy ?>;
+ithis[pageLoader] = <? include pageLoader.viy ?>;
+ithis[domain]=ithis.domain=w.location.protocol+'//'+w.location.hostname+(w.location.port?':'+w.location.port:'')+'/';
+ithis[toHex] = ithis.toHex = <? include toHex.viy ?>;
+ithis[documentHeight] = ithis.dHeight = <? include documentHeight.viy ?>;

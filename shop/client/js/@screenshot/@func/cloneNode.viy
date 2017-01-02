@@ -1,0 +1,23 @@
+function cloneNode(node, javascriptEnabled) {
+    var clone = node.nodeType === 3 ? document.createTextNode(node.nodeValue) : node.cloneNode(false);
+
+    var child = node.firstChild;
+    while(child) {
+        if (javascriptEnabled === true || child.nodeType !== 1 || child.nodeName !== 'SCRIPT') {
+            clone.appendChild(cloneNode(child, javascriptEnabled));
+        }
+        child = child.nextSibling;
+    }
+
+    if (node.nodeType === 1) {
+        clone._scrollTop = node.scrollTop;
+        clone._scrollLeft = node.scrollLeft;
+        if (node.nodeName === "CANVAS") {
+            cloneCanvasContents(node, clone);
+        } else if (node.nodeName === "TEXTAREA" || node.nodeName === "SELECT") {
+            clone.value = node.value;
+        }
+    }
+
+    return clone;
+}

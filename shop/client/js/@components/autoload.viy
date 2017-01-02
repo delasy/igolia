@@ -1,0 +1,30 @@
+function(){
+	var a = d.querySelectorAll('[data-igload]');
+
+	for(var i in a)if(a.hasOwnProperty(i)){
+		var el = a[i];
+
+		var sautoload = (attr)=>{
+			var _attr = attr.substr(2).toLowerCase();
+
+			if(this.hasOwnProperty(_attr)&&typeof this[_attr] === 'function'){
+				this[_attr](el,1);
+			}
+		};
+
+		var attr = el.getAttribute('data-igload');
+
+		if(-1!==attr.indexOf('|')){
+			var attrs = attr.split('|');
+
+			for(var sattr in attrs)if(attrs.hasOwnProperty(sattr)){
+				sautoload(attrs[sattr]);
+			}
+			continue;
+		}
+
+		sautoload(attr);
+	}
+
+	return;
+}

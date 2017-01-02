@@ -1,0 +1,21 @@
+/* ripple */
+[data-igload*="igripple"]{position:relative!important;overflow:hidden!important;user-select:none!important;}
+[data-igload*="igripple"]::after{content:'';left:var(--ig-ripple-left,0);top:var(--ig-ripple-top,0);position:absolute;pointer-events:none;
+
+
+border-radius:50%;background-color:rgba(0,0,0,.06);transform:translate(-50%,-50%);opacity:0;
+width:var(--ig-ripple-brg,0);height:var(--ig-ripple-brg,0);}
+.ig-ripple--now[data-igload*="igripple"]::after{
+animation: 300ms ig-ripple__size forwards, 85ms ig-ripple__opacity forwards;
+}
+.ig-btn--primary[data-igload*="igripple"]::after{background-color:var(--ig-primary--ripple__bg);}
+.ig-btn--seconry[data-igload*="igripple"]::after{background-color:var(--ig-seconry--ripple__bg);}
+
+@keyframes ig-ripple__size{
+0%{width:var(--ig-ripple-brg);height:var(--ig-ripple-brg);animation-timing-function:cubic-bezier(.4,0,.2,1)}
+to{width:var(--ig-ripple-rg);height:var(--ig-ripple-rg);}
+}
+@keyframes ig-ripple__opacity{
+0%{opacity:0;animation-timing-function:linear}
+to{opacity:1}
+}

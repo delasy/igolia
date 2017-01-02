@@ -1,0 +1,1 @@
+function error(type){throw RangeError(errors[type])}

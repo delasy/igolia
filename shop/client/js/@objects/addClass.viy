@@ -1,0 +1,3 @@
+function(el , classN){
+	if(!this[hasClass](el,classN))el.className += (el.className!='')?' '+classN:classN;
+}

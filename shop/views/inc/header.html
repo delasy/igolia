@@ -1,0 +1,37 @@
+<header data-waterfallto="preheader" data-theme="primary" data-igload="igtoolbar">
+	<div class="ig-toolbar__row">
+		<section class="ig-toolbar__section--left">
+			<button id="opendrawer" class="ig-btn ig-btn--icon ig-btn--primary ig-btn--transparent" data-igload="igripple">menu</button>
+			<a class="hidden-xs-down ig-toolbar__logo" href="/"><img src="/img/logo.png"></a>
+			<button id="headerMobileSearchIcon" class="ig-btn ig-btn--icon ig-btn--primary hidden-sm-up ig-btn--transparent" data-igload="igripple">search</button>
+		</section>
+		<section class="ig-toolbar__section--center" id="headerSearchWrapper">
+			<div class="ig-toolbar__search hidden-xs-down">
+				<div class="pull-left">
+					<button id="headerSearchIcon" class="ig-btn ig-btn--icon ig-btn--primary ig-btn--transparent hidden-xs-down" data-igload="igripple">search</button>
+					<button id="mobileSearchBack" class="ig-btn ig-btn--icon ig-btn--primary ig-btn--transparent hidden-xs-up" data-igload="igripple">arrow_back</button>
+					<hr>
+				</div>
+				<div class="ig-toolbar__search__input">
+					<input type="search" id="headerSearch" name="q" value="<?=scope.q?>" placeholder="<?=scope.T.placeholderq?>" />
+				</div>
+				<div class="pull-right">
+					<button id="headerSearchEmptyIcon" class="ig-btn ig-btn--icon ig-btn--primary ig-btn--transparent" data-igload="igripple" disabled>close</button>
+					<hr class="right">
+					<button id="headerSpeechIcon" class="ig-btn ig-btn--icon ig-btn--primary ig-btn--transparent" data-igload="igripple">mic_none</button>
+				</div>
+			</div>
+			<div id="searchWB"></div>
+			<a class="hidden-sm-up ig-toolbar__logo" href="/"><img class="own-toolbar-logo" src="/img/logo.png"></a>
+		</section>
+		<section class="ig-toolbar__section--right">
+			<div class="ig-tooltip">
+				<button class="ig-btn ig-btn--icon ig-btn--primary ig-btn--transparent" data-igload="igripple">dashboard</button>
+				<span class="ig-tooltip__inner">Dashboard</span>
+			</div>
+			<div class="ig-badge ig-badge--icon" data-badge="3">
+				<button class="ig-btn ig-btn--icon ig-btn--primary ig-btn--transparent" data-igload="igripple">shopping_cart</button>
+			</div>
+		</section>
+	</div>
+</header>

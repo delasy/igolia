@@ -1,0 +1,23 @@
+[igoliaINPUT]{display:block;background:#fff;border-radius:3px;border:1px solid rgba(0,0,0,.1);padding-bottom:91px;position:relative;margin:30px}
+[igoliaINPUT="visible"]{display:inline-block}
+[igoliaINPUT="hidden"]{display:none}
+.igoliaINPUT--selected{background:#ff4c6f;color:#fff;user-select:none;vertical-align:top;display:inline-block;font-size:16px;width:40px;height:40px;line-height:40px;text-align:center;cursor:pointer}
+.igoliaINPUT--selected:hover{background:#ff4c6f}
+.igoliaINPUT--dateswrap{text-align:left;font-size:0;width:280px;padding:10px;display:inline-block;vertical-align:top}
+.igoliaINPUT--date{user-select:none;vertical-align:top;display:inline-block;font-size:16px;border:1px solid rgba(0,0,0,.075);width:38px;height:38px;line-height:38px;text-align:center;cursor:pointer;background:#fff}
+.igoliaINPUT--date:hover{background:rgba(0,0,0,.1)}
+.igoliaINPUT--date[false]{opacity:.3;cursor:not-allowed}
+.igoliaINPUT--date[false]:hover{background:#fff}
+.igoliaINPUT--date[spanhover]{background:rgba(255,76,111,.2);color:#000}
+.igoliaINPUT--clear-dates{position:absolute;bottom:10px;left:10px;border:0;background:#fff;cursor:pointer}
+.igoliaINPUT--clear-dates:hover{text-decoration:underline}
+.igoliaINPUT--nav-nav{user-select:none;font-size:14px}
+.igoliaINPUT--nav-nav>div{width:40px;text-align:center;margin-bottom:10px;display:inline-block}
+.igoliaINPUT--prev{position:absolute;left:10px;top:10px;font-size:18px;height:28px;line-height:24px;width:28px;border:1px solid rgba(0,0,0,.1);border-radius:2px;cursor:pointer;background:#fff}
+.igoliaINPUT--next{position:absolute;right:10px;top:10px;font-size:18px;height:28px;line-height:24px;width:28px;border:1px solid rgba(0,0,0,.1);border-radius:2px;cursor:pointer;background:#fff}
+.igoliaINPUT--nav-h{font-size:16px;line-height:30px;display:block;text-align:center;margin-bottom:10px}
+.igoliaINPUT--close{position:absolute;bottom:10px;right:10px;font-size:18px;height:28px;line-height:28px;width:28px;border:1px solid rgba(0,0,0,.1);border-radius:2px;cursor:pointer;background:#fff;display:block;text-align:center}
+.igoliaINPUT--close:hover,.igoliaINPUT--prev:hover,.igoliaINPUT--next:hover{border:1px solid rgba(0,0,0,.2)}
+.igoliaINPUT--info-block{position:absolute;display:block;margin:0 10px 10px 0;right:0;bottom:30px;text-align:right;font-size:11px;color:#fe4e6e}
+#igoliaInput{display:none}
+.inputsDiv{border:1px solid #666;display:inline-block;min-width:300px;text-align:center;height:20px;line-height:20px}

@@ -1,0 +1,8 @@
+.index_how_we_work{background:#2d384a;text-align:center;}
+.index_how_we_work_image{display:inline-block;content:url('/rotate_image?image=other/index_how_we_work_&add_to_name=LANG&mime_type=jpg&degree=0');}
+@media (min-width:576px) and (max-width:992px){
+.index_how_we_work_image{width:100%;}
+}
+@media (max-width:575px){
+.index_how_we_work_image{width:100%;content:url('/rotate_image?image=other/index_how_we_work_&add_to_name=LANG&mime_type=jpg&degree=270');}
+}

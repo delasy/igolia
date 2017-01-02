@@ -1,0 +1,89 @@
+function(el,autoload){
+	var rn = {};
+
+	var thead = el.getElementsByTagName('thead')[0];
+	var tbody = el.getElementsByTagName('tbody')[0];
+
+	var thead_rows = thead.getElementsByTagName('tr');
+	var tbody_rows = tbody.getElementsByTagName('tr');
+
+	if(autoload){
+		for(var i=0;i<thead_rows.length;i++){
+			var row = thead_rows[i];
+			var row_first = row.children[0];
+
+			var nrow = d.createElement('th');
+
+			var inpu = d.createElement('input');
+			inpu.setAttribute('data-igload','igcheckbox');
+			inpu.type = 'checkbox';
+			var nameEl = ithis[randstr]();
+			inpu.name = nameEl;
+			inpu.setAttribute('data-label','');
+
+			nrow.appendChild(inpu);
+
+			row.insertBefore(nrow,row_first);
+
+			ithis[components].checkbox(inpu,1);
+
+			d.getElementById(nameEl).addEventListener('change',function(){
+				for(var j=0;j<tbody_rows.length;j++){
+					var row = tbody_rows[j];
+					var row_first = row.children[0];
+					var input = row_first.children[0].getElementsByClassName('ig-checkbox__input')[0];
+
+					if(this.checked){
+						ithis[components].checkbox(input).check();
+					}else{
+						ithis[components].checkbox(input).uncheck();
+					}
+				}
+			});
+		}
+
+		for(var i=0;i<tbody_rows.length;i++){
+			var row = tbody_rows[i];
+			var row_first = row.children[0];
+
+			var nrow = d.createElement('td');
+
+			var inpu = d.createElement('input');
+			inpu.setAttribute('data-igload','igcheckbox');
+			inpu.type = 'checkbox';
+			var nameEl = ithis[randstr]();
+			inpu.name = nameEl;
+			inpu.setAttribute('data-label','');
+
+			nrow.appendChild(inpu);
+
+			row.insertBefore(nrow,row_first);
+
+			ithis[components].checkbox(inpu,1);
+
+			row.addEventListener('click',function(){
+				var el = d.getElementById(this);
+				ithis[components].checkbox(el).toggleCheck();
+			}.bind(nameEl));
+		}
+	}
+
+	rn = {
+		selectedRows:function(){
+			var rows = [];
+
+			for(var k=0;k<tbody_rows.length;k++){
+				var row = tbody_rows[k];
+				var row_first = row.children[0];
+
+				var input = row_first.children[0].getElementsByClassName('ig-checkbox__input')[0];
+
+				if(input.checked)rows.push(row);
+			}
+
+			return rows;
+		}
+	};
+
+	return rn;
+}

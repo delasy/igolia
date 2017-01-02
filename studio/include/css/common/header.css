@@ -1,0 +1,60 @@
+header{position:fixed;background-color:#fff;z-index:100;left:0;top:0;right:0;height:48px;box-shadow:0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);}
+
+header .nav{z-index:2;position:relative;height:100%}
+header .long_logo{height:48px;overflow:hidden;position:relative;white-space:nowrap}
+header .long_logo>a{height:44px;position:relative;display:block;font-size:0;border-bottom:2px solid transparent;border-top:2px solid transparent;text-align:left;padding-left:15px;}
+header .long_logo>a>img{height:40px;margin:2px 0;width:auto;}
+header .long_logo>a>img:hover{opacity:.8;transition:opacity .4s;}
+header .long_logo #header_totop{display:none;position:absolute;top:0;right:0;height:100%;width:50px;z-index:9999999}
+header .long_logo .i{display:none;position:absolute;right:9px;top:50%;height:13px;width:13px;margin-top:-13px;transform:rotate(-45deg);border:2px solid #bda180;border-width:2px 2px 0 0;z-index:33333;opacity:.6;transition:.25s ease}
+header .long_logo #header_totop:hover>.i{opacity:1}
+header .long_logo .i::before{content:'';width:28px;height:2px;position:absolute;top:50%;left:50%;margin:0 0 0 -16px;background:#bda180;transform:rotate(-45deg)}
+header>div>div{height:100%}
+
+#header_menu_links{text-align:left;}
+
+header .header_nav{font-size:0;height:100%;text-align:left;overflow:hidden;}
+header .header_nav a{position:relative;vertical-align:top;text-decoration:none;font-size:14px;font-weight:normal;color:#757575;padding:0 15px;display:inline-block;height:44px;line-height:44px;border-bottom:2px solid transparent;border-top:2px solid transparent;}
+header .header_nav a:hover{color:#212121;transition:color .2s}
+header .header_nav a.active{border-bottom-color:#bda180;color:#212121;font-weight:500;cursor:default;}
+
+header #vertical_ellipsis_dropdown_closer{z-index:101}
+header #vertical_ellipsis_dropdown{display:block;position: fixed;
+    top: 0;
+	height:100%;
+	width:300px;
+    background: #fff;
+    z-index: 102;
+    overflow: hidden;
+    box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -5px rgba(0,0,0,0.4);
+}
+header #vertical_ellipsis_dropdown .close_tag{
+	display: block;padding:0 15px;
+    cursor: pointer;border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    text-align: left;
+	font-size:0;
+}
+header #vertical_ellipsis_dropdown .close_tag>img,header #vertical_ellipsis_dropdown .close_tag>svg{height:35px;margin:15px 0;display:inline-block;}
+header #vertical_ellipsis_dropdown .close_tag>svg{float:right;}
+header #vertical_ellipsis_dropdown .this_scroll--container{
+	overflow: auto;
+    position: absolute;
+    top: 66px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+header #vertical_ellipsis_dropdown .this_scroll--container>a{text-align:left;border:0;height:auto;line-height:1;font-size:14px;font-weight:500;display:block;padding:17px 12px 17px 20px;text-decoration:none;color:#757575;}
+header #vertical_ellipsis_dropdown .this_scroll--container>a:hover{background:#e7e7e7;}
+header #vertical_ellipsis_dropdown .this_scroll--container>a.active{background:#e7e7e7;color:#bda180;}
+
+header .vertical_ellipsis{display:none;float:right;width:40px;height:40px;padding:4px;text-align:center;}
+header #vertical_ellipsis{color:#757575;display:block;text-align:center;cursor:pointer;background:transparent;border:0;outline:none;width:100%;border-radius:50%;}
+header #vertical_ellipsis>img{max-width:50%;max-height:50%;margin:25%;opacity:.6;}
+header #vertical_ellipsis:active,header #vertical_ellipsis_dropdown>.close_tag:active{background:rgba(0,0,0,.075);}
+
+@media screen and (max-width:800px){
+header .vertical_ellipsis{display:inline-block;}
+#header_menu_links{display:none;}
+}

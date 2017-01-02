@@ -1,0 +1,12 @@
+function initNode(node) {
+    if (node.nodeType === 1) {
+        node.scrollTop = node._scrollTop;
+        node.scrollLeft = node._scrollLeft;
+
+        var child = node.firstChild;
+        while(child){
+            initNode(child);
+            child = child.nextSibling;
+        }
+    }
+}

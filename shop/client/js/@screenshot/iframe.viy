@@ -1,0 +1,43 @@
+<| include @func/restoreOwnerScroll.viy /|>
+<| include @func/cloneCanvasContents.viy /|>
+<| include @func/cloneNode.viy /|>
+<| include @func/initNode.viy /|>
+
+module.exports = function(ownerDocument, containerDocument, width, height, options, x ,y) {
+    var documentElement = cloneNode(ownerDocument.documentElement,options.javascriptEnabled);
+    var container = containerDocument.createElement('iframe');
+
+    container.className = 'ig-screenshot__container';
+    container.width = width;
+    container.height = height;
+    container.scrolling = 'no';
+    containerDocument.body.appendChild(container);
+
+    return new Promise(function(resolve) {
+        var documentClone = container.contentWindow.document;
+        
+        container.contentWindow.onload = container.onload = function() {
+            var interval = setInterval(function() {
+                if (documentClone.body.childNodes.length > 0) {
+                    initNode(documentClone.documentElement);
+                    clearInterval(interval);
+                    if (options.type === "view") {
+                        container.contentWindow.scrollTo(x, y);
+                        if ((/(iPad|iPhone|iPod)/g).test(navigator.userAgent) && (container.contentWindow.scrollY !== y || container.contentWindow.scrollX !== x)) {
+                            documentClone.documentElement.style.top = (-y) + 'px';
+                            documentClone.documentElement.style.left = (-x) + 'px';
+                            documentClone.documentElement.style.position = 'absolute';
+                        }
+                    }
+                    resolve(container);
+                }
+            }, 50);
+        };
+
+        documentClone.open();
+        documentClone.write('<!DOCTYPE html><html></html>');
+        restoreOwnerScroll(ownerDocument, x, y);
+        documentClone.replaceChild(documentClone.adoptNode(documentElement), documentClone.documentElement);
+        documentClone.close();
+    });
+};

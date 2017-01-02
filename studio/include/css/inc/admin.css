@@ -1,0 +1,12 @@
+*,html{margin:0;padding:0;}
+
+sidebar{background:#bda180;width:198px;border-right:2px solid #262527;height:100%;display:block;top:0;left:0;position:fixed;padding:0;}
+sidebar>.menu_item{display:block;width:100%;text-align:center;position:relative;}
+sidebar>.menu_item>a,sidebar>.menu_item>.menu_dropdown>a{cursor:default;color:#fff;text-decoration:none;font-size:18px;font-weight:500;padding:4px;display:block;}
+sidebar>.menu_item>a[href],sidebar>.menu_item>.menu_dropdown>a[href]{cursor:pointer;}
+sidebar>.menu_item>.bold{font-weight:bold;}
+sidebar>.menu_item>a:hover,sidebar>.menu_item>.menu_dropdown>a:hover{background-color:rgba(0,0,0,.2);}
+sidebar>.menu_item>.menu_dropdown{display:none;position:relative;}
+sidebar>.menu_item:hover>.menu_dropdown{display:block;}
+
+main{display:block;margin:0 20px 0 220px;display:block;}

@@ -1,0 +1,13 @@
+function(el,classN){
+	if(ithis[hasClass](el,classN)){
+		var elClass = ' ' + el.className + ' ';
+		while(elClass.indexOf(' ' + classN + ' ') !== -1){
+			elClass = elClass.replace(classN + ' ', '');
+		}
+		if(elClass.substr(0,1)==' ')elClass = elClass.substr(1);
+		if(elClass.substr(-1)==' ')elClass = elClass.substr(0,elClass.length - 1);
+		el.className = elClass;
+	}
+
+	return true;
+}

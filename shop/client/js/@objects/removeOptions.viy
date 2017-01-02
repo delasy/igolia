@@ -1,0 +1,7 @@
+function(el){
+	var i;
+	for(i = el.options.length-1;i>=0;i--){
+		el.remove(i);
+	}
+	return true;
+}

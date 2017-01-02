@@ -1,0 +1,20 @@
+/* menus */
+.ig-menu{position:relative;display:inline-block;}
+.ig-menu__content{position:absolute;left:0;top:0;bottom:auto;right:auto;min-width:170px;max-width:calc(100vw - 32px);max-height:calc(100vh - 32px);margin:0;padding:0;border-radius:2px;background-color:white;white-space:nowrap;overflow:hidden;z-index:4;transition:transform 200ms ease-in;box-shadow:0px 3px 1px -2px rgba(0,0,0,.2),0px 2px 2px 0px rgba(0,0,0,.14),0px 1px 5px 0px rgba(0,0,0,.12);transform:scale(0);transform-origin:left top;}
+
+.ig-menu.ig-menu--lefttop .ig-menu__content,
+.ig-menu.ig-menu--topleft .ig-menu__content{transform-origin:left top;left:0;right:auto;bottom:auto;top:0;}
+.ig-menu.ig-menu--leftbottom .ig-menu__content,
+.ig-menu.ig-menu--bottomleft .ig-menu__content{transform-origin:left bottom;left:0;right:auto;bottom:0;top:auto;}
+.ig-menu.ig-menu--righttop .ig-menu__content,
+.ig-menu.ig-menu--topright .ig-menu__content{transform-origin:right top;left:auto;right:0;bottom:auto;top:0;}
+
+.ig-menu.ig-menu--rightbottom .ig-menu__content,
+.ig-menu.ig-menu--bottomright .ig-menu__content{transform-origin:right bottom;left:auto;right:0;bottom:0;top:auto;}
+
+.ig-menu.ig-menu--open .ig-menu__content{transform:scale(1);}
+.ig-menu__items{list-style-type:none;padding:8px 0;overflow-x:hidden;overflow-y:auto;}
+.ig-menu__item{height:48px;line-height:48px;text-align:left;cursor:pointer;position:relative;padding:0 16px;outline:0;font-size:16px;font-weight:normal;user-select:none;color:rgb(117,117,117);text-decoration:none;transition-delay:69ms;letter-spacing:.04em;}
+.ig-menu__item:hover{background:rgba(229,229,229,.5);}
+.ig-menu__item:focus{background:rgb(229,229,229);}
+.ig-menu__delimiter{height:0;margin:0;border:0;border-bottom:1px solid rgba(0,0,0,.12);}

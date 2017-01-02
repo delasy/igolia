@@ -1,0 +1,67 @@
+function(l,button_text,button_function,onlybuttonclickcanclose){
+	if(!l||typeof l !== 'string')l = ithis[unknownText];
+
+	var needbtn = (typeof button_text === 'string'&&typeof button_function === 'function') ? true : false;
+
+	var t = d.getElementById('igsnackbarsparent');
+	if(t&&t.className !== 'ig-error')t.parentNode.removeChild(t);
+
+	if(!t){
+		t = d.createElement('div');
+		t.id = 'igsnackbarsparent';
+		t.className = 'ig-error';
+
+		d.body.appendChild(t);
+	}
+
+	var tt = d.createElement('div');
+
+	tt.innerHTML = l;
+	
+	tt.className = 'ig-error__bubble';
+	t.appendChild(tt);
+
+	if(needbtn){
+		tt.className += ' ig-error__bubble--wb';
+		var btn = ithis[createNode]('button',{
+			className:'ig-btn ig-btn--primary ig-btn--lil',
+			innerHTML:button_text,
+			attr1:{
+				name:'data-igload',
+				value:'igripple'
+			}
+		});
+
+		btn.addEventListener('click',function h(){
+			button_function();
+
+			if(onlybuttonclickcanclose){
+				tt.className = 'ig-error__bubble';
+			
+				setTimeout(function(){
+					t.removeChild(tt);
+				},250);
+			}
+		});
+
+		tt.appendChild(btn);
+
+		ithis[components][ripple](btn);
+	}
+
+	setTimeout(function(){
+		tt.className += ' ig-error__bubble--visible';
+
+		if(!onlybuttonclickcanclose){
+			setTimeout(function(){
+				tt.className = 'ig-error__bubble';
+			
+				setTimeout(function(){
+					t.removeChild(tt);
+				},250);
+			},4000);
+		}
+	},100);
+	
+	return false;
+}

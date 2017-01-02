@@ -1,0 +1,117 @@
+function(el,autoload){/*data-igload="iginput",type,name,id,data-label,value,disabled,data-type*/
+	if(!el)return;
+
+	var rn;
+	var pel = el.parentNode;
+	var input = el,div = pel;
+
+	if(autoload){
+		var name = el.name;
+		var type = el.type;
+		var id = el.id ? el.id : name;
+		var datalabel = el.getAttribute('data-label');
+		var datatype = el.hasAttribute('data-type') ? el.getAttribute('data-type') : 'input';
+		var value = el.value;
+		var dis = el.disabled;
+
+		var label,span;
+		div = d.createElement('div');
+		input = d.createElement(datatype);
+		label = d.createElement('label');
+		span = d.createElement('span');
+
+		div.className = 'ig-textfield';
+		if(value)div.className += ' ig-textfield--html';
+
+		input.type = type;
+		input.name = name;
+		input.autocomplete = el.autocomplete;
+		input.id = id;
+		input.className = 'ig-textfield__input';
+		input.value = value;
+		if(dis){
+			input.disabled = dis;
+			div.className += ' ig-textfield--disabled';
+		}
+
+		label.innerHTML = datalabel;
+		label.for = id;
+		label.className = 'ig-textfield__label';
+
+		span.className = 'ig-textfield__error';
+
+		div.appendChild(input);
+		div.appendChild(label);
+		div.appendChild(span);
+
+		pel.insertBefore(div,el);
+		pel.removeChild(el);
+
+		input.addEventListener('focus',function(){
+			ithis[addClass](div,'ig-textfield--focus');
+		});
+
+		input.addEventListener('blur',function(){
+			ithis[removeClass](div,'ig-textfield--focus');
+		});
+
+		input.addEventListener('keyup',function(){
+			if(this.value){
+				if(!ithis[hasClass](div,'ig-textfield--html'))ithis[addClass](div,'ig-textfield--html');
+			}else{
+				if(ithis[hasClass](div,'ig-textfield--html'))ithis[removeClass](div,'ig-textfield--html');
+			}
+			
+			rn.error_remove();
+		});
+
+		input.addEventListener('change',function(){
+			if(this.value){
+				if(!ithis[hasClass](div,'ig-textfield--html'))ithis[addClass](div,'ig-textfield--html');
+			}else{
+				if(ithis[hasClass](div,'ig-textfield--html'))ithis[removeClass](div,'ig-textfield--html');
+			}
+			
+			rn.error_remove();
+		});
+
+		setTimeout(function(){
+			if(input.value && !ithis[hasClass](div,'ig-textfield--html'))ithis[addClass](div,'ig-textfield--html');
+		},500);
+	}else{
+		var div = pel;
+		var span = pel.getElementsByClassName('ig-textfield__error')[0];
+	}
+
+	rn = {
+		error : function(data){
+			if(!ithis[hasClass](div,'ig-textfield'))return console.error('Element\'s parent.className seems wrong!');
+			if(!span)return console.error('Element\'s brother "Error container" was lost!');
+			if(typeof data !== 'string')return console.error('Wrong data format!');
+
+			ithis[addClass](div,'ig-textfield--error');
+			span.innerHTML = data;
+
+			return true;
+		},
+		error_remove : function(){
+			if(!ithis[hasClass](div,'ig-textfield'))return console.error('Element\'s parent.className seems wrong!');
+			if(!span)return console.error('Element\'s brother "Error container" was lost!');
+
+			ithis[removeClass](div,'ig-textfield--error');
+			span.innerHTML = '';
+
+			return true;
+		},
+		disable:function(){
+			ithis[addClass](div,'ig-textfield--disabled');
+			input.disabled = true;
+		},
+		enable:function(){
+			ithis[removeClass](div,'ig-textfield--disabled');
+			input.disabled = false;
+		}
+	};
+
+	return rn;
+}

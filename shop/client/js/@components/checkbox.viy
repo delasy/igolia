@@ -1,0 +1,157 @@
+function(el,autoload){/*data-igload="igcheckbox",type,disabled,id,value,checked,name,data-label,*/
+	if(!el)return;
+	var pel = el.parentNode;
+	var label = pel,input = el;
+	var name = el.name,rn;
+
+	if(typeof autoload !== 'undefined'){
+		var type = el.type;
+		var id = el.id ? el.id : name;
+		var datalabel = el.getAttribute('data-label');
+
+		var span,box,error;
+		label = d.createElement('label');
+		input = d.createElement('input');
+		span = d.createElement('span');
+		box = d.createElement('span');
+
+		label.className = 'ig-checkbox';
+		if(el.disabled){
+			label.className += ' ig-checkbox--disabled';
+		}
+		if(el.checked){
+			label.className += ' ig-checkbox--checked';
+		}
+		if(type === 'radio'){
+			label.className += ' ig-checkbox--radio';
+		}
+		label.setAttribute('for',id);
+
+		input.className = 'ig-checkbox__input';
+		input.id = id;
+		input.name = name;
+		input.type = type;
+		input.value = el.value;
+		input.disabled = el.disabled;
+		if(el.checked){
+			input.checked = true;
+		}
+
+		span.className = 'ig-checkbox__label';
+		span.innerHTML = datalabel;
+
+		box.className = 'ig-checkbox__box';
+		box.innerHTML = '<svg viewBox="0 0 24 24"><path fill="none" stroke="white" stroke-width="4" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path></svg>';
+		if(type==='radio'){
+			box.innerHTML = '<span class="ig-checkbox--radio__span"></span>';
+		}
+
+		label.appendChild(input);
+		label.appendChild(span);
+		label.appendChild(box);
+
+		pel.insertBefore(label,el);
+		pel.removeChild(el);
+	}
+
+	rn = {
+		error:function(data){
+			var els = d.getElementsByName(name);
+
+			for(var ele in els)if(els.hasOwnProperty(ele)){
+				var nel = els[ele];
+
+				ithis[addClass](nel.parentNode,'ig-checkbox--warning');
+			}
+		},
+		error_remove:function(){
+			var els = d.getElementsByName(name);
+
+			for(var ele in els)if(els.hasOwnProperty(ele)){
+				var nel = els[ele];
+
+				ithis[removeClass](nel.parentNode,'ig-checkbox--warning');
+			}
+		},
+		disable:function(){
+			ithis[addClass](label,'ig-checkbox--disabled');
+			input.disabled = true;
+		},
+		enable:function(){
+			ithis[removeClass](label,'ig-checkbox--disabled');
+			input.disabled = false;
+		},
+		value:function(){
+			if(input.checked === true)return input.value;
+			if(!name)return;
+
+			var els = d.getElementsByName(name);
+
+			for(var ele in els)if(els.hasOwnProperty(ele)){
+				var nel = els[ele];
+
+				if(nel.checked){
+					return nel.value;
+					break;
+				}
+			}
+
+			return;
+		},
+		toggleCheck:function(){
+			input.checked = !input.checked;
+
+			rn.showChange();
+		},
+		uncheck:function(){
+			input.checked = false;
+
+			rn.showChange();
+		},
+		check:function(){
+			input.checked = true;
+
+			rn.showChange();
+		},
+		showChange:function(){
+			if(type==='radio'){
+				var t = d.getElementsByName(name);
+
+				for(var tt in t)if(t.hasOwnProperty(tt)){
+					var node = t[tt];
+
+					if(node===this)continue;
+
+					node.checked = false;
+					ithis[removeClass](node.parentNode,'ig-checkbox--checked');
+				}
+
+				ithis[addClass](label,'ig-checkbox--checked');
+			}else{/*checkbox*/
+				if(this.checked){
+					ithis[addClass](label,'ig-checkbox--checked');
+				}else{
+					ithis[removeClass](label,'ig-checkbox--checked');
+				}
+			}
+			
+			if(ithis[hasClass](label,'ig-checkbox--animating'))return;
+
+			ithis[addClass](label,'ig-checkbox--animating');
+
+			rn.error_remove();
+
+			setTimeout(function(){
+				ithis[removeClass](label,'ig-checkbox--animating');
+			},300);
+		}.bind(input)
+	};
+
+	if(autoload){
+		input.addEventListener('change',function(){
+			rn.showChange();
+		});
+	}
+
+	return rn;
+}

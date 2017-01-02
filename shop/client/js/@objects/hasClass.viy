@@ -1,0 +1,3 @@
+function(el , classN){
+	return (' ' + el.className + ' ').indexOf(' ' + classN + ' ') !== -1;
+}

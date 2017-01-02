@@ -1,0 +1,27 @@
+var ig = (function(d,w){
+	var i=[],j=function(){};
+
+	function k(){
+		function m(){var o,p='',q='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';for(o=0;9>o;o++)p+=q.charAt(Math.floor(Math.random()*q.length));return p}
+		var n=m();if(-1!==i.indexOf(n))for(;-1!==i.indexOf(n);)n=m();
+		return i.push(n),n;
+	};
+
+	var ithis=j.prototype;
+	<? include vars.viy ?>
+	
+	ithis[lang] = [{name:'English',sc:'en'},{name:'Russian',sc:'ru'}];
+	ithis[startDictationTmp] = false;
+	ithis[recognitation] = null;
+	ithis[signUpStep] = 0;
+
+	ithis[unknownText] = T['AreYouAHacker'];
+
+	<? include @objects/index.viy ?>
+	<? include @components/index.viy ?>
+	ithis[dcl](<? include @pages/index.viy ?>);
+	<? include animate.viy ?>
+	<? include ajax.viy ?>
+
+	return j.constructor=function(){},new j;
+})(document,window);

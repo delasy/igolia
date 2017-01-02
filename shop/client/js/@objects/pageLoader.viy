@@ -1,0 +1,24 @@
+function(state){
+	var el = d.getElementById('igoliapageloadermain');
+	if(!el){
+		el = ithis[createNode]('div',{
+			id:'igoliapageloadermain',
+			className:'ig-pageloadermain'
+		});
+
+		var spin = ithis[createNode]('div');
+
+		el.appendChild(spin);
+
+		ithis[components][spinner](spin,1);
+
+		d.body.appendChild(el);
+	}
+	if(state){
+		ithis[addClass](d.body,'hide-y-scroll');
+		el.style.display = 'grid';
+	}else{
+		ithis[removeClass](d.body,'hide-y-scroll');
+		el.style.display = '';
+	}
+}

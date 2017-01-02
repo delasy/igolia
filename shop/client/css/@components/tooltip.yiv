@@ -1,0 +1,9 @@
+/* tooltip */
+.ig-tooltip{display:inline-block;position:relative;vertical-align:top;}
+.ig-tooltip__inner{z-index:999;background:rgba(97,97,97,.9);border-radius:2px;color:#fff;display:inline-block;font-size:10px;font-weight:500;line-height:14px;max-width:170px;position:absolute;top:100%;left:50%;padding:8px;text-align:center;transform:scale(0) translate(-50%,0)}
+.ig-tooltip:hover .ig-tooltip__inner{animation:igtooltipinner 200ms cubic-bezier(0,0,.2,1)forwards}
+@keyframes igtooltipinner{
+0%{transform:scale(0) translate(-50%,0);opacity:0}
+50%{transform:scale(0.99) translate(-50%,0)}
+100%{transform:scale(1) translate(-50%,0);opacity:1;visibility:visible}
+}

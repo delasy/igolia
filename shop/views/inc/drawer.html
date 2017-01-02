@@ -1,0 +1,23 @@
+<aside class="ig-drawer" data-igload="igdrawer" data-targets="opendrawer">
+	<nav class="ig-drawer__drawer ig-sh16">
+		<nav class="ig-drawer__header">
+			<div class="ig-drawer__header__content ig-primary"></div>
+			<div class="ig-drawer__header__helper"></div>
+		</nav>
+		<nav class="ig-drawer__content">
+			<h1 class="ig-drawer__subheader">Subheader</h1>
+			<a class="ig-drawer__link" data-igload="igripple" href="#">test</a>
+			<a class="ig-drawer__link" href="/a">test</a>
+			<hr class="ig-drawer__delimiter">
+			<a class="ig-drawer__link" href="#">tesT</a>
+			<? if(scope.title): ?>
+				<a class="ig-drawer__link" href="#">Mamamia<?=scope.title?></a>
+			<? else: ?>
+				<a class="ig-drawer__link" href="#">Mamamia<?=scope.recaptcha?></a>
+			<? endif ?>
+		</nav>
+		<nav class="ig-drawer__footer">
+			<span>hallo</span>
+		</nav>
+	</nav>
+</aside>

@@ -1,0 +1,5 @@
+<? include inc/tsi.yiv ?>
+<? include inc/ipmc.yiv ?>
+<? include inc/ipbs.yiv ?>
+<? include inc/ipcd.yiv ?>
+.ig-index-page__container{padding:75px 0;}

@@ -1,0 +1,13 @@
+/* toolbar */
+body{padding-top:64px;}
+.ig-toolbar{position:fixed;top:0;left:0;width:100%;z-index:2;height:64px;transition:background-color .2s ease;}
+
+@media(max-width:575px){
+body{padding-top:56px;}
+.ig-toolbar{height:56px;}
+}
+.ig-toolbar--primary{background:var(--ig-primary,0);}
+.ig-toolbar--seconry{background:var(--ig-seconry,0);}
+
+.ig-toolbar.ig-toolbar--below{box-shadow:0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.2)}
+.ig-toolbar[data-top=true]{background:transparent;}

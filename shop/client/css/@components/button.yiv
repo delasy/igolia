@@ -1,0 +1,27 @@
+/* buttons */
+
+.ig-btn{border-radius:2px;user-select:none;box-sizing:border-box;-webkit-appearance:none;text-align:center;text-decoration:none;text-transform:uppercase;overflow:hidden;vertical-align:middle;color:rgba(0,0,0,.87);background-color:transparent;font-size:14px;font-weight:500;line-height:36px;min-width:88px;height:36px;padding:0 16px;border:none;display:inline-block;position:relative;letter-spacing:.04em;outline:0;cursor:pointer;-webkit-tap-highlight-color:rgba(255,255,255,0);}
+
+.ig-btn::before{background-color:rgba(0,0,0,.06);position:absolute;top:calc(50% - 100%);left:calc(50% - 100%);width:200%;
+height:200%;transition:opacity 85ms linear;border-radius:50%;opacity:0;pointer-events:none;content:'';}
+
+.ig-btn:hover::before{opacity:.6;}
+.ig-btn:active::before{opacity:1;}
+.ig-btn:disabled{color:rgba(0,0,0,.26);cursor:default;pointer-events:none;}
+/*.ig-btn:disabled{display:none;}*/
+
+/* width shadow */
+.ig-btn--sh{box-shadow:0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);transition:box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);}
+.ig-btn--sh:active{box-shadow:0px 5px 5px -3px rgba(0, 0, 0, 0.2),0px 8px 10px 1px rgba(0, 0, 0, 0.14),0px 3px 14px 2px rgba(0, 0, 0, 0.12);}
+.ig-btn--primary{background-color:var(--ig-primary);color:var(--ig-primary__text)}
+.ig-btn--seconry{background-color:var(--ig-seconry);color:var(--ig-seconry__text)}
+
+/* little button */
+.ig-btn--lil{padding:0 8px}
+
+/* icons */
+.ig-btn--icon{font-family:'Material Icons';font-weight:normal;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-feature-settings:'liga';-webkit-font-smoothing:antialiased;width:56px;height:56px;padding:0;min-width:56px;border-radius:50%;}
+.ig-btn--icon.ig-btn--lil{min-width:40px;width:40px;height:40px;font-size:16px}
+.ig-btn--icon:disabled{background-color:rgba(0,0,0,.12);color:rgba(0,0,0,.26);}
+
+.ig-btn--transparent{background-color:transparent!important;}

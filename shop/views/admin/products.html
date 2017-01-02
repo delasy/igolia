@@ -1,0 +1,29 @@
+<div><a href="/admin/welcome">Back</a></div>
+<div>
+<h2>Product By Id</h2>
+<form method="get" id="formget">
+	<input type="p">
+</form>
+</div>
+<div>
+<h2>Select an Category</h2>
+<form method="get" id="form">
+	<select name="c">
+		<% for(var CC in cats){ %>
+			<option><%=cats[CC]%></option>
+		<% } %>
+	</select>
+</form>
+</div>
+<button onclick="add()">Add Product</button>
+<button onclick="get()">Get Products List</button>
+<script>
+function add(){
+	document.getElementById('form').action = '/admin/add_product';
+	document.getElementById('form').submit();
+}
+function get(){
+	document.getElementById('form').action = '/admin/products_list';
+	document.getElementById('form').submit();
+}
+</script>

@@ -1,0 +1,9 @@
+input[type="search_service"]{margin-bottom:20px;}
+
+.output_service{min-height:240px;overflow:hidden;display:table;}
+.output_service_wrap>.border{box-shadow:0 2px 2px 0 rgba(0,0,0,.16),0 0 0 1px rgba(0,0,0,.08);min-height:220px;margin-top:20px;}
+.output_service>div{display:table-cell;vertical-align:middle;}
+.output_service>div>span,.output_service>div>h1{color:#262527;font-size:18px;font-weight:300;display:inline-block;width:90%;vertical-align:middle;}
+.output_service>div>h1{font-size:16px;max-width:100%;text-overflow:hidden;overflow:hidden;}
+.output_service>div>h1>span{color:#bda180;font-size:16px;}
+.output_service>div>span#result{color:#bda180;font-size:40px;}
